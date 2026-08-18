@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.btn-sair img{
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.container{
+    width: 100%;
+    max-width: 420px; 
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img{
+    width: 60px; 
+}
+
+.logo h2{
+
+    font-size: 2rem; 
+}
+
+h1{
+    text-align: center;
+    color: #4D8964;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.input-box{
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    gap: 15px;
+    height: 50px; 
+    border-radius: 12px;
+    margin-bottom: 18px;
+
+    border: 1px solid #bdbdbd;
+    border-radius: 20px;
+
+    background: white;
+
+    padding: 0 20px;
+    margin-bottom: 25px;
+}
+
+.input-box i{
+    color: #4D8964;
+    font-size: 1rem;
+}
+
+.input-box input{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.input-box .fa-eye{
+    color: #a8a8a8;
+    cursor: pointer;
+}
+
+.genero{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.radio-card{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 20px;
+
+    border: 1px solid #bdbdbd;
+    border-radius: 18px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.radio-card input{
+    width: 20px;
+    height: 20px;
+}
+
+.radio-card span{
+    font-size: 1.2rem;
+}
+
+button{
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #184D35;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover{
+    opacity: .9;
+}
+
+.login{
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.login a{
+    text-decoration: none;
+    color: #4D8964;
+    font-weight: 600;
+}
+
+/* Responsividade */
+
+@media(max-width: 768px){
+
+    h1{
+        font-size: 2.2rem;
+    }
+
+    label{
+        font-size: 1.2rem;
+    }
+
+    .input-box{
+        height: 60px;
+    }
+
+    .input-box input{
+        font-size: 1rem;
+    }
+
+    button{
+        height: 65px;
+        font-size: 1.5rem;
+    }
+
+    .genero{
+        flex-direction: column;
+    }
+
+    .radio-card{
+        width: 100%;
+    }
+}
+#mensagensErro{
+    margin-top: 10px;
+    color: #d90429;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.erro{
+    margin-bottom: 5px;
+}
+.sucesso{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.sucesso-box{
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+
+    animation: aparecer 0.3s ease;
+}
+
+.sucesso-box h2{
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

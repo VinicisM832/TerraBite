@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - Terra Bite</title>
+
+    <link rel="stylesheet" href="Cadastro.css">
+</head>
+<body>
+    
+    <main class="container">
+        <div class="btn-sair">
+            <img src="icons/voltar.png" alt="Voltar" onclick="history.back()">
+        </div>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="icons/ICONE (1).png" alt="Logo Terra Bite">
+            <h2>Terra Bite</h2>
+        </div>
+
+        <h1>Criar conta</h1>
+
+        <form id="cadastroForm">
+
+    <label>Nome completo</label>
+    <div class="input-box">
+        <input type="text" id="nome" placeholder="Seu nome completo">
+    </div>
+
+    <label>Aniversário</label>
+    <div class="input-box">
+        <input type="date" id="aniversario">
+    </div>
+
+    <label>E-mail</label>
+    <div class="input-box">
+        <input type="email" id="email" placeholder="seu@email.com">
+    </div>
+
+    <label>Senha</label>
+    <div class="input-box">
+        <input type="password" id="senha" placeholder="••••••••••">
+    </div>
+
+    <div id="mensagensErro"></div>
+
+    <button type="submit">
+        Cadastrar
+    </button>
+    <p class="login">
+                Já tem uma conta?
+                <a href="#">Entrar</a>
+            </p>
+
+</form>
+
+<div id="sucesso" class="sucesso">
+    <div class="sucesso-box">
+        <h2>Cadastro concluído!</h2>
+        <p>Sua conta foi criada com sucesso.</p>
+    </div>
+</div>
+
+    </main>
+<script src="script.js"></script>   
+</body>
+</html>

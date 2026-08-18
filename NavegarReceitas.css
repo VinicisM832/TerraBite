@@ -1,0 +1,137 @@
+.imgtexto {
+    display: flex;
+    align-items: center; /* alinha verticalmente */
+    gap: 10px; /* espaço entre imagem e texto */
+}
+
+.imgtexto img {
+    width: 30px; /* ajuste o tamanho */
+    height: auto;
+}
+
+.imgtexto h2 {
+    margin: 0; /* remove margem padrão */
+}
+.receitas{
+    padding: 40px 60px;
+}
+
+.receitas h2{
+    font-size: 32px;
+    color: #2c4d3d;
+    margin-bottom: 30px;
+}
+
+.grid-receitas{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+/* Tablet */
+@media (max-width: 1024px){
+    .grid-receitas{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Celular */
+@media (max-width: 768px){
+    .grid-receitas{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+.card-receita{
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    text-align: center;
+   
+    display: flex;
+    flex-direction: column;
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-receita > img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-receita h3{
+    font-size: 20px;
+    min-height: 70px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.descricao{
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tags{
+    display: flexbox;
+    justify-content: center;
+    flex-wrap: nowrap; 
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tags span{
+    background: #eef4ed;
+    color: #4f6e5c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.info{
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+}
+
+.info div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info img{
+    width: 14px;
+    height: 14px;
+}
+
+.info span{
+    font-size: 13px;
+    color: #333;
+}
+
+.card-receita{
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-receita:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}

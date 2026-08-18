@@ -1,0 +1,178 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3f3ef;
+    margin:0;
+    padding:0;
+}
+.container{
+    max-width:1000px;
+    margin:30px auto 0;
+    padding:20px;
+}
+
+/* TOPO */
+
+.topo{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:20px;
+    align-items:stretch;
+}
+
+.foto-receita{
+    border-radius:12px;
+    overflow:hidden;
+    height:100%;
+}
+
+.foto-receita img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.foto-receita h3{
+    padding:12px;
+    font-size:18px;
+}
+
+.info-lateral{
+    display:grid;
+    grid-template-rows:3fr 1fr;
+    gap:15px;
+}
+
+.cards-info{
+    background:#dce4da;
+    border-radius:12px;
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.card-mini{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.card-mini img{
+    width:60px;
+    height:px;
+    border-radius:50%;
+    background:#a8a7a7;
+    object-fit:contain;
+}
+
+.card-mini h4{
+    font-size:14px;
+}
+
+.card-mini p{
+    font-size:12px;
+    color:#555;
+}
+
+.partes{
+    background:#dce4da;
+    border-radius:12px;
+    padding:20px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.partes img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#fff;
+}
+
+/* MEIO */
+
+.meio{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+}
+
+.card h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+.card li{
+    margin-bottom:6px;
+}
+
+.card p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+/* PREPARO */
+
+.preparo{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+}
+
+.preparo h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.preparo ol{
+    padding-left:20px;
+}
+
+.preparo li{
+    margin-bottom:8px;
+    line-height:1.5;
+}
+
+/* RESPONSIVO */
+
+@media (max-width:768px){
+
+    .topo{
+        grid-template-columns:1fr;
+    }
+
+    .meio{
+        grid-template-columns:1fr;
+    }
+
+    .cards-info{
+        grid-template-columns:1fr;
+    }
+
+}
