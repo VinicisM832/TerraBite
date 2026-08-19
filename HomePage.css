@@ -79,6 +79,7 @@ nav{
 }
 
 nav a{
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -86,6 +87,12 @@ nav a{
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-weight: 500;
+    transition: 0.3s ease;
+    
+}
+nav a:hover{
+    text-decoration: underline;
+    
 }
 
 nav img{
@@ -144,27 +151,29 @@ nav img{
     margin-top: 30px;
 }
 
-.btn-verde{
+.botoes button{
+    width: fit-content;
     padding: 12px 25px;
-
-    border: none;
+    border: 3px solid transparent;
     border-radius: 10px;
-
+    cursor: pointer;
+    transition: 300ms ease;
+}
+.btn-verde{
     background: #377252;
     color: white;
-
-    cursor: pointer;
+}
+.btn-verde:hover{
+    background: #E1E1E1;
+    border-color: #377252;
+    color: #377252;
 }
 
 .btn-cinza{
-    padding: 12px 25px;
-
-    border: none;
-    border-radius: 10px;
-
     background: #E1E1E1;
-
-    cursor: pointer;
+}
+.btn-cinza:hover{
+    border-color: #377252;
 }
 
 .imagem img{
