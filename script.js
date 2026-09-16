@@ -1,82 +1,156 @@
+// =========================================================
+// script.js — Validação e envio do formulário de Cadastro
+// =========================================================
+
 const formulario = document.getElementById("cadastroForm");
 
-formulario.addEventListener("submit", function(event){
+// Só executa se a página atual tiver o formulário de cadastro
+if (formulario) {
 
-    event.preventDefault();
+    const campos = {
+        nome: document.getElementById("nome"),
+        aniversario: document.getElementById("aniversario"),
+        email: document.getElementById("email"),
+        senha: document.getElementById("senha"),
+    };
 
-    const nome = document.getElementById("nome").value.trim();
-    const aniversario = document.getElementById("aniversario").value;
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value;
+    const erros = {
+        nome: document.getElementById("erroNome"),
+        aniversario: document.getElementById("erroAniversario"),
+        email: document.getElementById("erroEmail"),
+        senha: document.getElementById("erroSenha"),
+    };
 
-    const mensagensErro = document.getElementById("mensagensErro");
+    const popupSucesso = document.getElementById("sucesso");
 
-    mensagensErro.innerHTML = "";
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    let erros = [];
+        limparErros();
 
-    // Nome
-    if(nome.length < 3){
-        erros.push("Digite um nome válido.");
+        const nomeValido = validarNome(campos.nome.value.trim());
+        const aniversarioValido = validarAniversario(campos.aniversario.value);
+        const emailValido = validarEmail(campos.email.value.trim());
+        const senhaValida = validarSenha(campos.senha.value);
+
+        const formularioValido =
+            nomeValido && aniversarioValido && emailValido && senhaValida;
+
+        if (!formularioValido) {
+            return;
+        }
+
+        exibirSucessoERedirecionar();
+    });
+
+    // ---------------------------------------------------
+    // Validações
+    // ---------------------------------------------------
+
+    function validarNome(nome) {
+        if (nome === "") {
+            erros.nome.textContent = "* Digite seu nome.";
+            return false;
+        }
+
+        if (nome.length < 3) {
+            erros.nome.textContent = "* O nome deve ter pelo menos 3 caracteres.";
+            return false;
+        }
+
+        if (nome.split(/\s+/).length < 2) {
+            erros.nome.textContent = "* Digite seu nome e sobrenome.";
+            return false;
+        }
+
+        return true;
     }
 
-    // Nome deve conter pelo menos nome e sobrenome
-    if(nome.split(" ").length < 2){
-        erros.push("Digite nome e sobrenome.");
+    function validarAniversario(aniversario) {
+        if (aniversario === "") {
+            erros.aniversario.textContent = "* Informe sua data de nascimento.";
+            return false;
+        }
+
+        const idade = calcularIdade(aniversario);
+
+        if (idade < 10) {
+            erros.aniversario.textContent =
+                "* Você precisa ter pelo menos 10 anos para se cadastrar.";
+            return false;
+        }
+
+        return true;
     }
 
-    // Data
-   if(aniversario === ""){
-    erros.push("Informe sua data de nascimento.");
-} else {
+    function calcularIdade(dataString) {
+        const dataNascimento = new Date(dataString);
+        const hoje = new Date();
 
-    const dataNascimento = new Date(aniversario);
-    const hoje = new Date();
+        let idade = hoje.getFullYear() - dataNascimento.getFullYear();
 
-    let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+        const mesAtual = hoje.getMonth();
+        const mesNascimento = dataNascimento.getMonth();
 
-    const mesAtual = hoje.getMonth();
-    const mesNascimento = dataNascimento.getMonth();
+        const aniversarioAindaNaoChegouEsteAno =
+            mesAtual < mesNascimento ||
+            (mesAtual === mesNascimento && hoje.getDate() < dataNascimento.getDate());
 
-    if (
-        mesAtual < mesNascimento ||
-        (mesAtual === mesNascimento &&
-         hoje.getDate() < dataNascimento.getDate())
-    ) {
-        idade--;
+        if (aniversarioAindaNaoChegouEsteAno) {
+            idade--;
+        }
+
+        return idade;
     }
 
-    if (idade < 8) {
-        erros.push("Você precisa ter pelo menos 8 anos para se cadastrar.");
+    function validarEmail(email) {
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email === "") {
+            erros.email.textContent = "* Informe seu e-mail.";
+            return false;
+        }
+
+        if (!regexEmail.test(email)) {
+            erros.email.textContent = "* Digite um e-mail válido.";
+            return false;
+        }
+
+        return true;
+    }
+
+    function validarSenha(senha) {
+        if (senha === "") {
+            erros.senha.textContent = "* Informe uma senha.";
+            return false;
+        }
+
+        if (senha.length < 8) {
+            erros.senha.textContent = "* A senha deve ter pelo menos 8 caracteres.";
+            return false;
+        }
+
+        return true;
+    }
+
+    function limparErros() {
+        Object.values(erros).forEach((span) => (span.textContent = ""));
+    }
+
+    // ---------------------------------------------------
+    // Sucesso
+    // ---------------------------------------------------
+
+    function exibirSucessoERedirecionar() {
+        // Esconde a tela de cadastro
+        document.querySelector(".container").style.display = "none";
+
+        // Mostra o pop-up de sucesso
+        popupSucesso.style.display = "flex";
+
+        // Vai para a Home depois de 3 segundos
+        setTimeout(function () {
+            window.location.href = "HomePage.html";
+        }, 3000);
     }
 }
-
-    // Email
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if(!regexEmail.test(email)){
-        erros.push("Digite um e-mail válido.");
-    }
-
-    // Senha
-    if(senha.length < 8){
-        erros.push("A senha deve ter pelo menos 8 caracteres.");
-    }
-
-    // Exibe os erros
-    if(erros.length > 0){
-
-        erros.forEach(erro => {
-            mensagensErro.innerHTML +=
-            `<div class="erro">${erro}</div>`;
-        });
-
-        return;
-    }
-    document.getElementById("sucesso").style.display = "flex";
-
-    setTimeout(() => {
-        window.location.href = "login.html";
-    }, 2500);
-
-});

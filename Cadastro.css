@@ -20,7 +20,7 @@ body{
 
 .container{
     width: 100%;
-    max-width: 90%;
+    max-width: 80%; 
     background: white;
     padding: 35px;
     border-radius: 20px;
@@ -162,6 +162,9 @@ button:hover{
 /* Responsividade */
 
 @media(max-width: 768px){
+    .container{
+        max-width: 95%;
+    }
 
     h1{
         font-size: 2.2rem;
@@ -192,52 +195,64 @@ button:hover{
         width: 100%;
     }
 }
-#mensagensErro{
-    margin-top: 10px;
-    color: #d90429;
-    font-size: 14px;
-    font-weight: 500;
-}
+.mensagem-erro { 
+    color: red; 
+    font-size: 13px; 
+    margin-top: 4px; 
+    margin-bottom: 8px; 
+    display: block; 
+    min-height: 18px; }
 
-.erro{
-    margin-bottom: 5px;
-}
-.sucesso{
+.sucesso {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+
+    background: rgba(0, 0, 0, 0.5);
 
     display: none;
+
     justify-content: center;
     align-items: center;
 
-    z-index: 999;
+    z-index: 9999;
 }
 
-.sucesso-box{
+.sucesso-box {
     background: white;
+
     padding: 30px;
+
     border-radius: 20px;
+
     text-align: center;
+
     width: 320px;
 
     animation: aparecer 0.3s ease;
 }
 
-.sucesso-box h2{
+.sucesso-box h2 {
     color: #2e7d32;
     margin-bottom: 10px;
 }
 
-@keyframes aparecer{
-    from{
+.sucesso-box p {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+@keyframes aparecer {
+
+    from {
         opacity: 0;
         transform: scale(0.8);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: scale(1);
     }

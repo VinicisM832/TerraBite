@@ -101,7 +101,7 @@ nav img{
 
 
 .hero{
-    max-width: 1200px;
+    max-width: 80%;
 
     margin: auto;
     padding: 80px 40px;
@@ -299,6 +299,9 @@ nav img{
 /* CELULARES PEQUENOS */
 
 @media (max-width: 480px){
+    main{
+        max-width: 95%;
+    }
 
     .logo h1{
         font-size: 2rem;

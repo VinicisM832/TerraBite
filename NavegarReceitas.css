@@ -98,7 +98,10 @@ nav a:hover{
 nav img{
     width: 24px;
 }
-
+main{
+    width: 80%;
+    margin: auto;
+}
 .imgtexto {
     display: flex;
     align-items: center; /* alinha verticalmente */
