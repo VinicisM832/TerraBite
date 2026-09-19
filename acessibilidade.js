@@ -125,6 +125,24 @@ fonteNormal.addEventListener("click", function () {
 
 });
 
+function obterVozHumana() {
+    const vozes = speechSynthesis.getVoices();
+    const vozesBrasileiras = vozes.filter(function (voz) {
+        return /^pt-BR$/i.test(voz.lang) || /^pt_BR$/i.test(voz.lang);
+    });
+    const preferencias = ["daniel", "ricardo", "felipe", "jorge", "microsoft", "google"];
+
+    return vozesBrasileiras.sort(function (primeira, segunda) {
+        const pontuacao = function (voz) {
+            const nome = voz.name.toLowerCase();
+            return preferencias.reduce(function (total, preferencia, indice) {
+                return total + (nome.includes(preferencia) ? preferencias.length - indice : 0);
+            }, 0) + (voz.localService ? 1 : 0);
+        };
+        return pontuacao(segunda) - pontuacao(primeira);
+    })[0] || null;
+}
+
 leituraVoz.addEventListener("click", function () {
 
     if (!("speechSynthesis" in window)) {
@@ -141,21 +159,22 @@ leituraVoz.addEventListener("click", function () {
         document.querySelector(".conteudo-site").innerText;
 
 
-    const fala =
-        new SpeechSynthesisUtterance(texto);
+    const falar = function () {
+        const fala = new SpeechSynthesisUtterance(texto);
+        fala.lang = "pt-BR";
+        fala.voice = obterVozHumana();
+        fala.rate = 0.82;
+        fala.pitch = 0.55;
+        fala.volume = 0.7;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(fala);
+    };
 
-
-    fala.lang = "pt-BR";
-
-    fala.rate = 1;
-
-    fala.pitch = 1;
-
-
-    speechSynthesis.cancel();
-
-
-    speechSynthesis.speak(fala);
+    if (speechSynthesis.getVoices().length) {
+        falar();
+    } else {
+        speechSynthesis.addEventListener("voiceschanged", falar, { once: true });
+    }
 
 });
 

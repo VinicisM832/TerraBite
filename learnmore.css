@@ -140,6 +140,16 @@ nav img{
     line-height: 1.5;
 }
 
+.banners-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.banners{
+    flex: 1 1 calc(33.333% - 14px);
+}
+
 @media (max-width: 768px){
     .navbar{
         height: auto;

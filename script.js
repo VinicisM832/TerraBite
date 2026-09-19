@@ -320,6 +320,13 @@ function desenharReceitasPublicadas() {
         autor.textContent = "Publicada por " + receita.autor;
         item.appendChild(autor);
 
+        item.appendChild(TerraBiteSalvas.criarBotao({
+            id: receita.id,
+            titulo: receita.titulo,
+            imagem: receita.foto || "pictures/image 15.png",
+            publicada: true
+        }));
+
         const editar = document.createElement("button");
         editar.type = "button";
         editar.className = "editar-receita";

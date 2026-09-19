@@ -43,6 +43,7 @@ body{
 }
 
 .foto-receita{
+    position: relative;
     border-radius:12px;
     overflow:hidden;
     height:100%;
@@ -113,6 +114,31 @@ body{
     height:60px;
     border-radius:50%;
     background:#fff;
+}
+
+.topo,
+.meio{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topo > *,
+.meio > *{
+    flex: 1 1 360px;
+}
+
+.info-lateral{
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards-info .card-mini{
+    flex: 1 1 190px;
 }
 
 /* MEIO */
@@ -430,3 +456,5 @@ body{
         margin-inline: 0;
     }
 }
+
+.meio{ display: flex; flex-wrap: wrap; }

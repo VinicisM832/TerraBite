@@ -238,6 +238,33 @@ body{
     gap: 12px;
 }
 
+.receitas-salvas{
+    display: grid;
+    gap: 10px;
+}
+
+.receita-salva{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f3f6f3;
+    color: #263c2e;
+    text-decoration: none;
+}
+
+.receita-salva img{
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.receita-salva .botao-salvar-receita{
+    margin-left: auto;
+}
+
 .receita-historico{
     display: flex;
     align-items: center;
@@ -292,10 +319,37 @@ body{
     white-space: nowrap;
 }
 
+.perfil-resumo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perfil-resumo article{
+    flex: 1 1 170px;
+}
+
+.historico-receitas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.historico-receitas .receita-historico{
+    flex: 1 1 220px;
+}
+
+.receitas-salvas,
+.dicas-publicadas,
+.avaliacoes-receitas{
+    display: flex;
+    flex-direction: column;
+}
+
 #perfilComentarios {
     display: grid;
     gap: 12px;
 }
+
+#perfilComentarios { display: flex; flex-direction: column; gap: 12px; }
 
 .comentario-perfil {
     padding: 16px;

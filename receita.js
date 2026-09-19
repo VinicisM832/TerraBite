@@ -233,6 +233,20 @@ const receitas = {
     document.getElementById("tituloReceita").textContent = receita.titulo;
     document.getElementById("imagemReceita").src = receita.imagem;
     document.getElementById("imagemReceita").alt = receita.titulo;
+    const botaoSalvar = document.getElementById("botaoSalvarReceita");
+    botaoSalvar.dataset.salvarId = identificador;
+    botaoSalvar.addEventListener("click", function (event) {
+        event.preventDefault();
+        const salvas = TerraBiteSalvas.ler();
+        const indice = salvas.findIndex(function (item) {
+            return (typeof item === "string" ? item : item.id) === identificador;
+        });
+        if (indice >= 0) salvas.splice(indice, 1);
+        else salvas.push({ id: identificador, titulo: receita.titulo, imagem: receita.imagem });
+        localStorage.setItem("terraBiteReceitasSalvas", JSON.stringify(salvas));
+        document.dispatchEvent(new CustomEvent("receitas-salvas-atualizadas"));
+    });
+    TerraBiteSalvas.configurarBotoes();
     document.getElementById("dificuldadeReceita").textContent = receita.dificuldade;
     document.getElementById("avaliacaoReceita").textContent = receita.avaliacao;
     document.getElementById("tempoReceita").textContent = receita.preparo;

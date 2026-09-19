@@ -4,6 +4,7 @@
     const semCadastro = document.getElementById("perfilSemCadastro");
     const lista = document.getElementById("perfilComentarios");
     const historico = document.getElementById("historicoReceitas");
+    const salvas = document.getElementById("receitasSalvas");
     const dicas = document.getElementById("dicasPublicadas");
     const avaliacoes = document.getElementById("avaliacoesReceitas");
     const nomesReceitas = {
@@ -106,6 +107,40 @@
         } catch (erro) {
             return [];
         }
+    }
+
+    function desenharSalvas() {
+        salvas.innerHTML = "";
+        const receitasSalvas = TerraBiteSalvas.ler();
+
+        if (receitasSalvas.length === 0) {
+            salvas.innerHTML = "<p class=\"lista-vazia\">Você ainda não salvou receitas.</p>";
+            return;
+        }
+
+        receitasSalvas.forEach(function (item) {
+            const identificador = typeof item === "string" ? item : item.id;
+            const link = document.createElement("a");
+            link.className = "receita-salva";
+            link.href = "receita.html?receita=" + encodeURIComponent(identificador);
+
+            const imagem = document.createElement("img");
+            imagem.src = (typeof item === "object" && item.imagem) || imagensReceitas[identificador] || "pictures/image 15.png";
+            imagem.alt = "";
+            link.appendChild(imagem);
+
+            const nome = document.createElement("strong");
+            nome.textContent = (typeof item === "object" && item.titulo) || nomesReceitas[identificador] || "Receita salva";
+            link.appendChild(nome);
+
+            const botao = TerraBiteSalvas.criarBotao({
+                id: identificador,
+                titulo: nome.textContent,
+                imagem: imagem.src
+            });
+            link.appendChild(botao);
+            salvas.appendChild(link);
+        });
     }
 
     function desenharResumo() {
@@ -229,6 +264,8 @@
 
     desenharResumo();
     desenharHistorico();
+    desenharSalvas();
     desenharDicas();
     desenharAvaliacoes();
+    document.addEventListener("receitas-salvas-atualizadas", desenharSalvas);
 })();

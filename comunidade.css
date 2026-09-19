@@ -173,6 +173,26 @@
     object-fit: cover;
 }
 
+.publicar-comunidade{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.publicar-comunidade > *{
+    flex: 1 1 280px;
+}
+
+.comunidade-grid{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.comunidade-card{
+    flex: 1 1 calc(33.333% - 14px);
+    min-width: 260px;
+}
+
 .comunidade-card h3,
 .comunidade-card p{
     margin: 0 0 8px;
@@ -243,10 +263,14 @@
     border-top: 1px solid #e0e7e1;
 }
 
+.comunidade-comentarios{ display: flex; flex-direction: column; }
+
 .comunidade-comentarios form{
     display: grid;
     gap: 7px;
 }
+
+.comunidade-comentarios form{ display: flex; flex-direction: column; }
 
 .comunidade-comentarios[hidden]{
     display: none;

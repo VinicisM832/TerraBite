@@ -102,6 +102,8 @@ form{
     font-weight: 700;
 }
 
+.perfil-avatar{ display: flex; align-items: center; justify-content: center; }
+
 .perfil-mensagem{
     min-height: 20px;
     margin: 12px 0;
@@ -237,6 +239,11 @@ label{
     flex: 1;
     border: none;
     outline: none;
+
+.receitas-publicadas{
+    display: flex;
+    flex-direction: column;
+}
     font-size: 1rem;
     background: transparent;
 }
@@ -450,3 +457,5 @@ button:hover{
         height: 56px;
     }
 }
+
+.receitas-publicadas{ display: flex; flex-direction: column; }

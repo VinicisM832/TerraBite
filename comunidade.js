@@ -136,6 +136,14 @@ const receitasBase = [
         titulo.textContent = receita.titulo;
         card.appendChild(titulo);
 
+        const botaoSalvar = TerraBiteSalvas.criarBotao({
+            id: receita.id,
+            titulo: receita.titulo,
+            imagem: receita.imagem || receita.foto || "pictures/image 15.png",
+            publicada: Boolean(receita.publicada)
+        });
+        card.appendChild(botaoSalvar);
+
         const descricao = document.createElement("p");
         descricao.textContent = receita.descricao;
         card.appendChild(descricao);
@@ -174,6 +182,7 @@ const receitasBase = [
 
         const acoes = document.createElement("div");
         acoes.className = "comunidade-acoes";
+        acoes.appendChild(botaoSalvar);
         const nota = document.createElement("span");
         nota.dataset.notaReceita = receita.id;
         nota.textContent = calcularNota(receita);

@@ -182,7 +182,7 @@ main{
 }
 
 .tags{
-    display: flexbox;
+    display: flex;
     justify-content: center;
     flex-wrap: nowrap; 
     gap: 8px;
@@ -238,6 +238,17 @@ main{
 .card-receita:hover{
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.grid-receitas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.grid-receitas .card-receita{
+    flex: 1 1 calc(33.333% - 14px);
+    min-width: 240px;
 }
 
 .card-receita.receita-visitada {
