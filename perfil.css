@@ -1,0 +1,361 @@
+.container{
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 0 40px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f7f9f7;
+}
+
+body{
+    min-height: 100vh;
+    background: #e9edef;
+}
+
+.perfil-topo{
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    background: #075e54;
+    color: #fff;
+}
+
+.perfil-voltar,
+.perfil-menu{
+    color: #fff;
+    text-decoration: none;
+    font-size: 34px;
+    line-height: 1;
+}
+
+.perfil-menu{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 0 6px;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+}
+
+.perfil-logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.perfil-logo img{
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.titulo-pagina{
+    margin: 0;
+    padding: 24px 32px 0;
+    color: #263c2e;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.perfil{
+    padding: 24px 32px 0;
+}
+
+.perfil-cabecalho{
+    min-height: 128px;
+    margin: 0 -32px 24px;
+    padding: 22px 32px;
+    background: #fff;
+    border-bottom: 1px solid #d8ded9;
+}
+
+.perfil-cabecalho h2{
+    margin-bottom: 6px;
+    color: #263c2e;
+}
+
+.perfil-cabecalho p{
+    color: #66766d;
+}
+
+.perfil-avatar{
+    width: 88px;
+    height: 88px;
+    flex: 0 0 88px;
+    background: #25d366;
+    border: 3px solid #d9fdd3;
+    font-size: 1.4rem;
+}
+
+.perfil-resumo article{
+    background: #fff;
+    border: 1px solid #dfe7e1;
+}
+
+.dados-perfil{
+    display: grid;
+    gap: 14px;
+    padding: 22px 24px;
+    border: 1px solid #dfe7e1;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.dados-perfil[hidden]{
+    display: none;
+}
+
+.dados-perfil div{
+    display: grid;
+    gap: 3px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.dados-perfil span{
+    color: #718178;
+    font-size: .78rem;
+}
+
+.dados-perfil strong{
+    color: #263c2e;
+    font-weight: 500;
+}
+
+.botao-editar-perfil{
+    width: fit-content;
+    height: auto;
+    margin-top: 4px;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 9px;
+    background: #075e54;
+    color: #fff;
+    cursor: pointer;
+}
+
+#perfilForm[hidden]{
+    display: none;
+}
+
+.publicar-receita,
+.historico-comentarios{
+    background: #fff;
+    padding: 24px;
+    border: 1px solid #dfe7e1;
+    border-radius: 10px;
+}
+
+.historico-comentarios{
+    margin-top: 24px;
+}
+
+.publicar-receita{
+    border-top: 1px solid #dfe7e1;
+}
+
+.sem-cadastro {
+    padding: 18px;
+    border-radius: 12px;
+    background: #e7eee9;
+    color: #315d45;
+    text-align: center;
+}
+
+.sem-cadastro a {
+    color: #184d35;
+    font-weight: 700;
+}
+
+.historico-comentarios {
+    margin-top: 35px;
+    padding-top: 28px;
+    border-top: 1px solid #d8ded9;
+}
+
+.historico-comentarios h2 {
+    margin: 0 0 16px;
+}
+
+.perfil-resumo{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.perfil-resumo article{
+    padding: 16px 10px;
+    border-radius: 12px;
+    background: #e7eee9;
+    text-align: center;
+}
+
+.perfil-resumo strong,
+.perfil-resumo span{
+    display: block;
+}
+
+.perfil-resumo strong{
+    color: #377252;
+    font-size: 1.5rem;
+}
+
+.perfil-resumo span{
+    color: #52665a;
+    font-size: .8rem;
+}
+
+.perfil-avatar{
+    overflow: hidden;
+    position: relative;
+}
+
+.perfil-avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.input-arquivo{
+    height: auto;
+    padding: 12px 16px;
+}
+
+.input-arquivo input{
+    width: 100%;
+}
+
+.historico-receitas{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.receita-historico{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f3f6f3;
+    color: #263c2e;
+    text-decoration: none;
+}
+
+.receita-historico img{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.dicas-publicadas{
+    display: grid;
+    gap: 10px;
+}
+
+.dica-perfil{
+    padding: 14px;
+    border-left: 4px solid #6e9f82;
+    background: #f3f6f3;
+}
+
+.dica-perfil strong,
+.dica-perfil p{
+    display: block;
+    margin: 0 0 6px;
+}
+
+.avaliacoes-receitas{
+    display: grid;
+    gap: 8px;
+}
+
+.avaliacao-perfil{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #f3f6f3;
+}
+
+.avaliacao-perfil span{
+    color: #b47700;
+    white-space: nowrap;
+}
+
+#perfilComentarios {
+    display: grid;
+    gap: 12px;
+}
+
+.comentario-perfil {
+    padding: 16px;
+    border-left: 4px solid #377252;
+    border-radius: 8px;
+    background: #f3f6f3;
+}
+
+.comentario-perfil strong,
+.comentario-perfil p {
+    display: block;
+    margin: 0 0 8px;
+}
+
+.comentario-perfil small {
+    color: #6d7d72;
+}
+
+@media (max-width: 480px) {
+    .container{
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .perfil-topo{
+        padding-inline: 14px;
+    }
+
+    .titulo-pagina,
+    .perfil{
+        padding-inline: 16px;
+    }
+
+    .perfil-cabecalho{
+        margin-inline: -16px;
+        padding-inline: 16px;
+    }
+
+    .perfil-avatar{
+        width: 72px;
+        height: 72px;
+        flex-basis: 72px;
+    }
+
+    .historico-comentarios,
+    .publicar-receita {
+        margin-top: 25px;
+        padding-top: 20px;
+    }
+
+    .perfil-resumo{
+        gap: 6px;
+    }
+
+    .perfil-resumo article{
+        padding: 12px 4px;
+    }
+
+    .historico-receitas{
+        grid-template-columns: 1fr;
+    }
+}

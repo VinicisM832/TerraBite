@@ -1,0 +1,344 @@
+.painel {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 530px;
+    max-width: calc(100% - 30px);
+    max-height: calc(100vh - 20px);
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+    z-index: 1000;
+}
+
+.painel[hidden] {
+    display: none;
+}
+
+.painel .cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 28px;
+    background: linear-gradient(135deg, #4c8065, #6e9f82);
+    color: #fff;
+    cursor: grab;
+    touch-action: none;
+}
+
+.painel.arrastando .cabecalho {
+    cursor: grabbing;
+}
+
+.confirmacao-acessibilidade[hidden] {
+    display: none;
+}
+
+.confirmacao-acessibilidade {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, .55);
+}
+
+.confirmacao-caixa {
+    width: min(360px, 100%);
+    padding: 24px;
+    border-radius: 14px;
+    background: #fff;
+    color: #263c2e;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .3);
+    text-align: center;
+}
+
+.confirmacao-caixa h2 {
+    margin: 0 0 10px;
+    color: #244b35;
+}
+
+.confirmacao-caixa p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+}
+
+.confirmacao-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirmacao-acoes button {
+    width: auto;
+    min-width: 100px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#cancelarConfirmacao {
+    background: #e7eee9;
+    color: #315d45;
+}
+
+#aceitarConfirmacao {
+    background: #377252;
+    color: #fff;
+}
+
+.cancelar-acao {
+    background: #e7eee9;
+    color: #315d45;
+}
+
+.aceitar-acao {
+    background: #a62e2e;
+    color: #fff;
+}
+
+body.alto-contraste .confirmacao-caixa {
+    background: #000;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+body.alto-contraste .confirmacao-caixa h2,
+body.alto-contraste .confirmacao-caixa p {
+    color: #fff;
+}
+
+.painel .icone-olho {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+}
+
+.painel .titulo { flex: 1; }
+.painel .titulo h2 { margin: 0 0 2px; font-size: 27px; }
+.painel .titulo p { margin: 0; font-size: 17px; }
+
+.painel button { font: inherit; cursor: pointer; }
+.painel .fechar {
+    width: 52px;
+    height: 52px;
+    border: 0;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .2);
+    color: #fff;
+    font-size: 34px;
+}
+
+.painel .aviso {
+    margin: 12px 27px 28px;
+    padding: 15px 12px;
+    border-radius: 15px;
+    background: #e7eee9;
+    color: #597566;
+    line-height: 1.4;
+}
+
+.painel .card {
+    margin: 0 27px 28px;
+    padding: 28px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .13);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.painel .icone-card {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    border-radius: 12px;
+    background: #e7eee9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #397c5d;
+    font-size: 26px;
+}
+
+.painel .informacao { flex: 1; }
+.painel .informacao h3, .painel .informacao p { margin: 0; }
+.painel .informacao p { color: #777; font-size: 14px; }
+.painel .switch {
+    width: 74px;
+    height: 42px;
+    padding: 3px;
+    border: 2px solid #397c5d;
+    border-radius: 24px;
+    background: #e7eee9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 22px;
+}
+.painel .switch span {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+body.alto-contraste .painel .switch {
+    background: #222;
+    border-color: #fff;
+    justify-content: flex-end;
+}
+.painel .botoes-fonte { display: flex; gap: 5px; }
+.painel .botoes-fonte button, .painel .voltar {
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    background: #e7eee9;
+    color: #397c5d;
+}
+.painel .botoes-fonte span { display: block; font-size: 11px; }
+.painel .opcoes { display: flex; gap: 20px; margin: 0 27px 28px; }
+.painel .card-opcao {
+    flex: 1;
+    padding: 18px 10px;
+    border: 0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .13);
+    color: #333;
+}
+.painel .icone-opcao { font-size: 28px; }
+.painel .card-opcao h3, .painel .card-opcao p { margin: 5px 0 0; }
+.painel .card-opcao p { font-size: 12px; color: #777; }
+.painel .tela-daltonismo[hidden] { display: none; }
+.painel .conteudo-daltonismo { padding: 25px 27px; }
+.painel .titulo-daltonismo { display: flex; gap: 15px; align-items: center; margin-bottom: 20px; }
+.painel .titulo-daltonismo h2, .painel .titulo-daltonismo p { margin: 0; }
+.painel .titulo-daltonismo p { color: #777; font-size: 13px; }
+.painel .modo-cor {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 15px;
+    border: 0;
+    border-radius: 12px;
+    background: #f2f5f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+.painel .modo-cor h3, .painel .modo-cor p { margin: 0; }
+.painel .modo-cor p { color: #777; font-size: 13px; }
+.painel .cores { display: flex; gap: 4px; }
+.painel .cor { width: 18px; height: 18px; border-radius: 50%; }
+.painel .protanopia-1 { background: #d9534f; }
+.painel .protanopia-2 { background: #5cb85c; }
+.painel .protanopia-3 { background: #428bca; }
+.painel .deuteranopia-1 { background: #e6ab02; }
+.painel .deuteranopia-2 { background: #7570b3; }
+.painel .deuteranopia-3 { background: #1b9e77; }
+.painel .tritanopia-1 { background: #e7298a; }
+.painel .tritanopia-2 { background: #66a61e; }
+.painel .tritanopia-3 { background: #1f78b4; }
+.painel .padrao-1 { background: #f00; }
+.painel .padrao-2 { background: #0a0; }
+.painel .padrao-3 { background: #00f; }
+.painel .voltar { width: 100%; margin-top: 8px; }
+
+body.alto-contraste { background: #000; color: #fff; }
+body.alto-contraste .painel { background: #000; border: 2px solid #fff; }
+body.alto-contraste a,
+body.alto-contraste label,
+body.alto-contraste input,
+body.alto-contraste textarea,
+body.alto-contraste select,
+body.alto-contraste li,
+body.alto-contraste span,
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste h4,
+body.alto-contraste p { color: #fff; }
+body.alto-contraste input,
+body.alto-contraste textarea,
+body.alto-contraste select,
+body.alto-contraste button { background: #000; color: #fff; border-color: #fff; }
+body.alto-contraste img { outline: 1px solid #fff; }
+body.alto-contraste .painel .icone-card,
+body.alto-contraste .painel .aviso { background: #000; color: #fff; border: 2px solid #fff; }
+body.alto-contraste .painel .card-opcao,
+body.alto-contraste .painel .modo-cor { background: #000; color: #fff; border: 2px solid #fff; }
+body.protanopia { filter: url('#protanopia'); }
+body.deuteranopia { filter: url('#deuteranopia'); }
+body.tritanopia { filter: url('#tritanopia'); }
+
+@media (max-width: 560px){
+    .painel{
+        top: 8px;
+        width: calc(100% - 16px);
+        max-width: none;
+        max-height: calc(100vh - 16px);
+    }
+
+    .painel .cabecalho{
+        gap: 10px;
+        padding: 14px 16px;
+    }
+
+    .painel .icone-olho{
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        font-size: 24px;
+    }
+
+    .painel .titulo h2{
+        font-size: 20px;
+    }
+
+    .painel .titulo p{
+        font-size: 13px;
+    }
+
+    .painel .fechar{
+        width: 42px;
+        height: 42px;
+        font-size: 26px;
+    }
+
+    .painel .card{
+        margin: 0 16px 16px;
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .painel .botoes-fonte{
+        gap: 3px;
+    }
+
+    .painel .botoes-fonte button{
+        padding: 8px 5px;
+    }
+
+    .painel .opcoes{
+        gap: 10px;
+        margin: 0 16px 16px;
+    }
+
+    .painel .card-opcao{
+        padding: 14px 8px;
+    }
+}

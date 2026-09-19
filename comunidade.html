@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade - Terra Bite</title>
+    <link rel="icon" type="image/png" href="pictures/image 15.png">
+    <link rel="stylesheet" href="NavegarReceitas.css">
+    <link rel="stylesheet" href="acessibilidade-global.css">
+    <link rel="stylesheet" href="comunidade.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="HomePage.html" class="logo-link">
+            <div class="logo">
+                <img src="icons/ICONE (1).png" alt="Logo Terra Bite">
+                <h1>Terra Bite</h1>
+            </div>
+        </a>
+
+        <div class="search">
+            <img src="icons/Vector.png" alt="Pesquisar">
+            <input id="buscaComunidade" type="search" placeholder="Buscar receitas e dicas...">
+        </div>
+
+        <nav>
+            <a href="comunidade.html">Comunidade</a>
+            <a href="perfil.html">
+                <img src="icons/icone perfil.png" alt="">
+                Perfil
+            </a>
+        </nav>
+    </header>
+
+    <main class="comunidade-container">
+        <section class="comunidade-intro">
+            <span>ESPAÇO DA COMUNIDADE</span>
+            <h1>Receitas, dicas e conversas reais</h1>
+            <p>Compartilhe receitas completas, avalie preparos e ajude outras pessoas a aproveitarem melhor os alimentos.</p>
+        </section>
+
+        <section class="publicar-comunidade" aria-labelledby="tituloPublicarComunidade">
+            <div>
+                <h2 id="tituloPublicarComunidade">Compartilhe sua receita</h2>
+                <p id="avisoPublicacao">Entre no seu perfil para publicar uma receita completa.</p>
+            </div>
+            <form id="comunidadeReceitaForm" hidden>
+                <label for="comunidadeFoto">Foto da receita</label>
+                <input id="comunidadeFoto" type="file" accept="image/png, image/jpeg, image/webp">
+
+                <label for="comunidadeTitulo">Nome da receita</label>
+                <input id="comunidadeTitulo" type="text" required>
+
+                <label for="comunidadeTopico">Tópico</label>
+                <select id="comunidadeTopico" required>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Doces">Doces</option>
+                    <option value="Acompanhamentos">Acompanhamentos</option>
+                    <option value="Pratos principais">Pratos principais</option>
+                    <option value="Aproveitamento">Aproveitamento de alimentos</option>
+                    <option value="Dicas">Dicas da comunidade</option>
+                </select>
+
+                <label for="comunidadeDescricao">Dica ou descrição</label>
+                <textarea id="comunidadeDescricao" rows="3" required></textarea>
+
+                <label for="comunidadeIngredientes">Ingredientes</label>
+                <textarea id="comunidadeIngredientes" rows="5" placeholder="Um ingrediente por linha" required></textarea>
+
+                <label for="comunidadePreparo">Modo de preparo</label>
+                <textarea id="comunidadePreparo" rows="5" placeholder="Um passo por linha" required></textarea>
+
+                <button type="submit">Publicar na comunidade</button>
+                <p id="mensagemPublicacao" role="status"></p>
+            </form>
+        </section>
+
+        <section class="comunidade-feed" aria-labelledby="tituloFeed">
+            <div class="feed-cabecalho">
+                <div>
+                    <span>FEED</span>
+                    <h2 id="tituloFeed">O que a comunidade está preparando</h2>
+                </div>
+                <div class="filtros-comunidade">
+                    <label class="filtro-label" for="filtroTopico">Tópico
+                        <select id="filtroTopico">
+                            <option value="todos">Todos os tópicos</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Doces">Doces</option>
+                            <option value="Acompanhamentos">Acompanhamentos</option>
+                            <option value="Pratos principais">Pratos principais</option>
+                            <option value="Aproveitamento">Aproveitamento de alimentos</option>
+                            <option value="Dicas">Dicas da comunidade</option>
+                        </select>
+                    </label>
+                    <label class="filtro-label" for="filtroFeed">Ordenar por
+                        <select id="filtroFeed">
+                            <option value="recentes">Mais recentes</option>
+                            <option value="avaliadas">Mais avaliadas</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div id="comunidadeFeed" class="comunidade-grid"></div>
+        </section>
+    </main>
+
+    <a class="acessibilidade" href="#" aria-label="Abrir acessibilidade" title="Acessibilidade">
+        <img src="pictures/Vector.png" alt="Acessibilidade">
+    </a>
+    <script src="comunidade.js"></script>
+    <script src="acessibilidade-global.js"></script>
+</body>
+</html>

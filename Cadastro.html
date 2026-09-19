@@ -7,6 +7,7 @@
     <title>Criar Conta - Terra Bite</title>
 
     <link rel="stylesheet" href="Cadastro.css">
+    <link rel="stylesheet" href="acessibilidade-global.css">
 </head>
 
 <body>
@@ -18,10 +19,12 @@
         </div>
 
         <!-- Logo -->
-        <div class="logo">
-            <img src="icons/ICONE (1).png" alt="Logo Terra Bite">
-            <h2>Terra Bite</h2>
-        </div>
+        <a href="HomePage.html" class="logo-link">
+            <div class="logo">
+                <img src="icons/ICONE (1).png" alt="Logo Terra Bite">
+                <h2>Terra Bite</h2>
+            </div>
+        </a>
 
         <h1>Criar conta</h1>
 
@@ -79,6 +82,69 @@
 
         </form>
 
+        <section id="perfil" class="perfil" hidden>
+            <div class="perfil-cabecalho">
+                <div class="perfil-avatar" aria-hidden="true">TB</div>
+                <div>
+                    <h2>Meu perfil</h2>
+                    <p>Atualize seus dados quando quiser.</p>
+                </div>
+            </div>
+
+            <form id="perfilForm">
+                <label for="perfilNome">Nome completo</label>
+                <div class="input-box">
+                    <input type="text" id="perfilNome" required>
+                </div>
+
+                <label for="perfilAniversario">Aniversário</label>
+                <div class="input-box">
+                    <input type="date" id="perfilAniversario" required>
+                </div>
+
+                <label for="perfilEmail">E-mail</label>
+                <div class="input-box">
+                    <input type="email" id="perfilEmail" required>
+                </div>
+
+                <button type="submit">Salvar alterações</button>
+                <p id="perfilMensagem" class="perfil-mensagem" role="status"></p>
+                <button type="button" id="novoCadastro" class="botao-secundario">Criar outro cadastro</button>
+            </form>
+
+            <section class="publicar-receita">
+                <h2>Publicar receita</h2>
+                <p>Compartilhe uma receita de aproveitamento com a comunidade.</p>
+
+                <form id="publicarReceitaForm">
+                    <label for="receitaTitulo">Nome da receita</label>
+                    <div class="input-box">
+                        <input type="text" id="receitaTitulo" required>
+                    </div>
+
+                    <label for="receitaDescricao">Descrição</label>
+                    <div class="input-box input-area">
+                        <textarea id="receitaDescricao" rows="3" required></textarea>
+                    </div>
+
+                    <label for="receitaIngredientes">Ingredientes</label>
+                    <div class="input-box input-area">
+                        <textarea id="receitaIngredientes" rows="5" placeholder="Um ingrediente por linha" required></textarea>
+                    </div>
+
+                    <label for="receitaPreparo">Modo de preparo</label>
+                    <div class="input-box input-area">
+                        <textarea id="receitaPreparo" rows="5" placeholder="Um passo por linha" required></textarea>
+                    </div>
+
+                    <button type="submit">Publicar receita</button>
+                    <button type="button" id="cancelarEdicao" class="botao-secundario" hidden>Cancelar edição</button>
+                    <p id="receitaMensagem" class="perfil-mensagem" role="status"></p>
+                </form>
+                <div id="receitasPublicadas" class="receitas-publicadas"></div>
+            </section>
+        </section>
+
     </main>
 
 
@@ -91,14 +157,19 @@
 
             <p>Cadastro realizado com sucesso!</p>
 
-            <p>Você será redirecionado para a página inicial.</p>
+            <p>Seu perfil será aberto em seguida.</p>
 
         </div>
 
     </div>
 
+    <a class="acessibilidade" href="#" aria-label="Abrir acessibilidade" title="Acessibilidade">
+        <img src="pictures/Vector.png" alt="Acessibilidade">
+    </a>
+
 
     <script src="script.js"></script>
+    <script src="acessibilidade-global.js"></script>
 
 </body>
 

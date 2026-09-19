@@ -240,6 +240,24 @@ main{
     box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
+.card-receita.receita-visitada {
+    border: 3px solid #377252;
+    position: relative;
+}
+
+.card-receita.receita-visitada::after {
+    content: "Visitada";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background: #377252;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 /* ACESSIBILIDADE */
 .acessibilidade{
     position: fixed;
@@ -258,4 +276,85 @@ main{
     height: 100%;
 
     display: block;
+}
+
+@media (max-width: 1100px){
+    main{
+        width: 92%;
+    }
+
+    .receitas{
+        padding: 32px 20px;
+    }
+
+    .grid-receitas{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px){
+    .navbar{
+        height: auto;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 18px 20px;
+    }
+
+    .logo{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search{
+        width: 100%;
+        order: 3;
+    }
+
+    nav{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .receitas{
+        padding: 28px 0 90px;
+    }
+
+    .receitas h2{
+        font-size: 28px;
+    }
+
+    .card-receita{
+        padding: 14px;
+    }
+
+    .card-receita > img{
+        height: 140px;
+    }
+
+    .card-receita h3{
+        font-size: 17px;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 520px){
+    main{
+        width: 100%;
+    }
+
+    .grid-receitas{
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card-receita > img{
+        height: 190px;
+    }
+
+    .acessibilidade{
+        right: 15px;
+        bottom: 15px;
+        width: 56px;
+        height: 56px;
+    }
 }

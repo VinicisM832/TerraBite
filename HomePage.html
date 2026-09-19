@@ -8,6 +8,7 @@
      <link rel="icon" type="image/png" href="pictures/image 15.png">
 
     <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="acessibilidade-global.css">
 </head>
 <body>
 
@@ -24,8 +25,11 @@
             <img src="icons/Vector.png" alt="Pesquisar">
 
             <input
+            id="buscaSite"
             type="text"
+            autocomplete="off"
             placeholder="Ex: Casca de batata, Talos, Bananas...">
+            <div id="sugestoesBusca" class="sugestoes-busca" hidden></div>
         </div>
 
         <nav>
@@ -34,7 +38,9 @@
                 Educação
             </a>
 
-            <a href="Cadastro.html">
+            <a href="comunidade.html">Comunidade</a>
+
+            <a href="perfil.html">
                 <img src="icons/icone perfil.png" alt="silhueta de uma pessoa">
                 Perfil
             </a>
@@ -92,8 +98,10 @@
 
     </main>
 
-    <div class="acessibilidade">
+    <a class="acessibilidade" href="#" aria-label="Abrir acessibilidade" title="Acessibilidade">
         <img src="pictures/Vector.png" alt="Acessibilidade">
-    </div>
+    </a>
+    <script src="acessibilidade-global.js"></script>
+    <script src="busca.js"></script>
 </body>
 </html>

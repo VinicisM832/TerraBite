@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="NavegarReceitas.css">
+    <link rel="stylesheet" href="acessibilidade-global.css">
 </head>
 <body>
 
@@ -35,7 +36,9 @@
                 Educação
             </a>
 
-            <a href="Cadastro.html">
+            <a href="comunidade.html">Comunidade</a>
+
+            <a href="perfil.html">
                 <img src="icons/icone perfil.png" alt="silhueta de uma pessoa">
                 Perfil
             </a>
@@ -53,7 +56,7 @@
             <div class="grid-receitas">
 
                 <!-- Card -->
-                <div class="card-receita">
+                <div class="card-receita" data-receita="suco-verde">
 
                     <img src="pictures/sucoverde.png" alt="Suco Verde">
 
@@ -83,7 +86,7 @@
                 </div>
 
                 <!-- Card -->
-                <a href="receita.html" class="card-receita">
+                <a href="receita.html" class="card-receita" data-receita="bolo-talhos-beterraba">
 
                     <img src="pictures/bolobeterraba.png" alt="Bolo de Talos Beterraba">
 
@@ -112,7 +115,7 @@
                 </a>
         
         <!-- Card -->
-        <div class="card-receita">
+        <div class="card-receita" data-receita="geleia-cascas-frutas">
 
             <img src="pictures/Geleia.png" alt="Receita">
 
@@ -144,7 +147,7 @@
         </div>
 
         <!-- Card -->
-        <div class="card-receita">
+        <div class="card-receita" data-receita="farofa-talos">
 
             <img src="pictures/farofa.png" alt="Receita">
 
@@ -173,7 +176,7 @@
 
         </div>
 
-        <div class="card-receita">
+        <div class="card-receita" data-receita="risoto-talos-espinafre">
 
             <img src="pictures/risoto.png" alt="Receita">
 
@@ -205,7 +208,7 @@
    
 
         <!-- Card -->
-        <div class="card-receita">
+        <div class="card-receita" data-receita="bowl-frango-legumes">
 
             <img src="pictures/salada2.png" alt="Receita">
 
@@ -234,9 +237,45 @@
         </div>
 
     </div>
-<div class="acessibilidade">
+<a class="acessibilidade" href="#" aria-label="Abrir acessibilidade" title="Acessibilidade">
     <img src="pictures/Vector.png" alt="Acessibilidade">
-</div>
+</a>
+<script src="acessibilidade-global.js"></script>
+<script>
+    (function () {
+        const chave = "terraBiteReceitasVisitadas";
+        const cards = document.querySelectorAll("[data-receita]");
+        let visitadas = [];
+
+        try {
+            visitadas = JSON.parse(localStorage.getItem(chave)) || [];
+        } catch (erro) {
+            visitadas = [];
+        }
+
+        cards.forEach(function (card) {
+            const id = card.dataset.receita;
+
+            if (visitadas.includes(id)) {
+                card.classList.add("receita-visitada");
+            }
+
+            card.addEventListener("click", function () {
+                if (!visitadas.includes(id)) visitadas.push(id);
+
+                try {
+                    localStorage.setItem(chave, JSON.stringify(visitadas));
+                } catch (erro) {
+                    card.classList.add("receita-visitada");
+                }
+
+                if (card.tagName !== "A") {
+                    window.location.href = "receita.html?receita=" + encodeURIComponent(id);
+                }
+            });
+        });
+    })();
+</script>
 </section>
 </body>
 </html>

@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="receita.css">
+    <link rel="stylesheet" href="acessibilidade-global.css">
 
 </head>
 <body>
@@ -31,12 +32,14 @@
 </div>
 
                <nav>
-            <a href="Cadastro.html">
+            <a href="comunidade.html">Comunidade</a>
+
+            <a href="perfil.html">
                 <img src="icons/livro.png" alt="imagem de livro">
                 Educação
             </a>
 
-            <a href="Cadastro.html">
+            <a href="perfil.html">
                 <img src="icons/icone perfil.png" alt="silhueta de uma pessoa">
                 Perfil
             </a>
@@ -51,7 +54,8 @@
     <!-- TOPO -->
     <section class="topo">
         <div class="foto-receita">
-            <img src="pictures/bolobeterraba.png" alt="Bolo de Beterraba">
+            <img id="imagemReceita" src="pictures/bolobeterraba.png" alt="Bolo de Beterraba">
+            <h3 id="tituloReceita">Bolo de Talos de Beterraba</h3>
 
         </div>
 
@@ -63,7 +67,7 @@
                     <img src="icons/colher.png" alt="">
                     <div>
                         <h4>Dificuldade</h4>
-                        <p>Média</p>
+                        <p id="dificuldadeReceita">Média</p>
                     </div>
                 </div>
 
@@ -71,7 +75,7 @@
                     <img src="icons/estrela.png" alt="">
                     <div>
                         <h4>Avaliação</h4>
-                        <p>4.7 (300)</p>
+                        <p id="avaliacaoReceita">4.7 (300)</p>
                     </div>
                 </div>
 
@@ -79,7 +83,7 @@
                     <img src="icons/relogio.png" alt="">
                     <div>
                         <h4>Preparo</h4>
-                        <p>50 min</p>
+                        <p id="tempoReceita">50 min</p>
                     </div>
                 </div>
 
@@ -87,7 +91,7 @@
                     <img src="icons/bolo.png" alt="">
                     <div>
                         <h4>Tipo</h4>
-                        <p>Sobremesa</p>
+                        <p id="tipoReceita">Sobremesa</p>
                     </div>
                 </div>
 
@@ -97,7 +101,7 @@
                 <img src="icons/folha.png" alt="">
                 <div>
                     <h4>Partes Reaproveitadas</h4>
-                    <p>Talos de beterraba</p>
+                    <p id="reaproveitadasReceita">Talos de beterraba</p>
                 </div>
             </div>
 
@@ -109,44 +113,17 @@
 
         <div class="card">
             <h2>Ingredientes</h2>
+            <ul id="ingredientesReceita"></ul>
 
-            <ul>
-                <li>1 xícara de talos de beterraba bem picados</li>
-                <li>3 ovos</li>
-                <li>1/2 xícara de óleo</li>
-                <li>1 xícara de açúcar</li>
-                <li>1/2 xícara de leite</li>
-                <li>1 xícara de farinha de trigo</li>
-                <li>1/2 xícara de chocolate em pó</li>
-                <li>1 colher (sopa) de fermento</li>
-            </ul>
+            <h3 id="coberturaTitulo">Cobertura (opcional)</h3>
 
-            <h3>Cobertura (opcional)</h3>
-
-            <ul>
-                <li>Cobertura</li>
-                <li>1/2 caixa de leite condensado</li>
-                <li>1 colher (sopa) de manteiga</li>
-                <li>2 colheres (sopa) de chocolate em pó</li>
-                <li>Leve ao fogo até engrossar e jogue sobre o bolo</li>
-            </ul>
+            <ul id="coberturaReceita"></ul>
         </div>
 
         <div class="card">
             <h2>Dicas</h2>
 
-            <p>
-                Os talos deixam o bolo mais úmido e nutritivo,
-                sem alterar muito o sabor do chocolate.
-            </p>
-
-            <p>
-                Dá pra substituir parte da farinha por aveia para deixar mais saudável.
-            </p>
-
-            <p>
-                Se quiser, adicione castanhas ou gotas de chocolate na massa.
-            </p>
+            <div id="dicasReceita"></div>
         </div>
 
     </section>
@@ -155,21 +132,36 @@
     <section class="preparo">
         <h2>Modo de Preparo</h2>
 
-        <ol>
-            <li>Lave bem os talos de beterraba e pique em pedaços pequenos.</li>
-            <li>No liquidificador, bata os talos com os ovos, óleo e leite.</li>
-            <li>Misture o açúcar, farinha e chocolate.</li>
-            <li>Adicione a mistura líquida e mexa bem.</li>
-            <li>Acrescente o fermento por último.</li>
-            <li>Despeje em uma forma untada.</li>
-            <li>Asse em forno preaquecido a 180°C.</li>
-            <li>Espere esfriar antes de desenformar.</li>
-        </ol>
+        <ol id="preparoReceita"></ol>
+    </section>
+
+    <section class="avaliacao-site" aria-label="Avalie esta receita">
+        <h2>Avalie esta receita</h2>
+        <div id="estrelasReceita" class="estrelas-receita" role="group" aria-label="Escolha uma nota de 1 a 5"></div>
+        <p id="avaliacaoMensagem" class="forum-mensagem" role="status"></p>
+    </section>
+
+    <section class="forum" id="forum">
+        <h2>Fórum da receita</h2>
+        <p class="forum-introducao">Compartilhe dúvidas, sugestões e experiências com esta receita.</p>
+
+        <p id="forumLogin" class="forum-login"></p>
+
+        <form id="comentarioForm" class="comentario-form" hidden>
+            <label for="comentarioTexto">Seu comentário</label>
+            <textarea id="comentarioTexto" rows="4" maxlength="500" placeholder="Escreva um comentário..." required></textarea>
+            <button type="submit">Publicar comentário</button>
+            <p id="comentarioMensagem" class="forum-mensagem" role="status"></p>
+        </form>
+
+        <div id="comentariosLista" class="comentarios-lista"></div>
     </section>
 
 </div>
-    <div class="acessibilidade">
+    <a class="acessibilidade" href="#" aria-label="Abrir acessibilidade" title="Acessibilidade">
         <img src="pictures/Vector.png" alt="Acessibilidade">
-    </div>
+    </a>
+    <script src="receita.js"></script>
+    <script src="acessibilidade-global.js"></script>
 </body>
 </html>

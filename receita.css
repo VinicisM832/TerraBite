@@ -1,3 +1,19 @@
+/* Botao de acessibilidade */
+.acessibilidade{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 65px;
+    height: 65px;
+    z-index: 10;
+}
+
+.acessibilidade img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 *{
     margin:0;
     padding:0;
@@ -67,7 +83,7 @@ body{
 
 .card-mini img{
     width:60px;
-    height:px;
+    height:60px;
     border-radius:50%;
     background:#a8a7a7;
     object-fit:contain;
@@ -159,20 +175,258 @@ body{
     line-height:1.5;
 }
 
+.avaliacao-site{
+    margin: 20px 0 0;
+    padding: 22px 25px;
+    border-radius: 12px;
+    background: white;
+    text-align: center;
+}
+
+.avaliacao-site h2{
+    margin: 0 0 10px;
+}
+
+.estrelas-receita{
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.estrela-botao{
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border: 0;
+    background: transparent;
+    color: #c58a00;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.estrela-botao:hover{
+    transform: scale(1.12);
+}
+
+.forum{
+    margin: 20px 0 0;
+    padding: 25px;
+    border-radius: 12px;
+    background: white;
+}
+
+.forum h2{
+    margin: 0 0 8px;
+}
+
+.forum-introducao,
+.forum-login{
+    color: #666;
+    line-height: 1.5;
+}
+
+.forum-login a{
+    color: #377252;
+    font-weight: 600;
+}
+
+.comentario-form[hidden]{
+    display: none;
+}
+
+.comentario-form{
+    display: grid;
+    gap: 10px;
+    margin: 20px 0 25px;
+}
+
+.comentario-form textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c7d1c9;
+    border-radius: 10px;
+    resize: vertical;
+    font: inherit;
+}
+
+.comentario-form button{
+    width: fit-content;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 10px;
+    background: #377252;
+    color: white;
+    cursor: pointer;
+}
+
+.forum-mensagem{
+    margin: 0;
+    color: #377252;
+}
+
+.comentarios-lista{
+    display: grid;
+    gap: 12px;
+}
+
+.comentario{
+    padding: 16px;
+    border-left: 4px solid #377252;
+    border-radius: 8px;
+    background: #f3f6f3;
+}
+
+.comentario-cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.editar-comentario{
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    padding: 5px 9px;
+    border: 0;
+    border-radius: 7px;
+    background: #e7eee9;
+    color: #315d45;
+    cursor: pointer;
+    font-size: .8rem;
+}
+
+.excluir-comentario{
+    width: auto;
+    height: auto;
+    padding: 5px 9px;
+    border: 0;
+    border-radius: 7px;
+    background: #fbe8e8;
+    color: #a62e2e;
+    cursor: pointer;
+    font-size: .8rem;
+}
+
+.comentario time{
+    color: #777;
+    font-size: .8rem;
+}
+
+.comentario p,
+.comentarios-vazios{
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* RESPONSIVO */
 
 @media (max-width:768px){
 
+    .container{
+        width: calc(100% - 32px);
+        margin-inline: auto;
+    }
+
     .topo{
         grid-template-columns:1fr;
+        margin-inline: 8px;
     }
 
     .meio{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:16px;
+        margin-inline: 8px;
+    }
+
+    .preparo{
+        margin-inline: 8px;
     }
 
     .cards-info{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
     }
 
+}
+
+@media (max-width: 560px){
+    .container{
+        width: calc(100% - 20px);
+        margin-top: 0;
+        padding: 14px 12px 90px;
+    }
+
+    .topo,
+    .meio{
+        gap: 14px;
+        margin-bottom: 14px;
+        margin-inline: 4px;
+    }
+
+    .preparo{
+        margin-inline: 4px;
+    }
+
+    .cards-info,
+    .partes,
+    .card,
+    .preparo{
+        padding: 16px;
+    }
+
+    .foto-receita{
+        min-height: 220px;
+    }
+
+    .foto-receita img{
+        min-height: 220px;
+    }
+
+    .card-mini img,
+    .partes img{
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 430px){
+    .meio{
+        grid-template-columns: 1fr;
+        margin-inline: 0;
+    }
+
+    .cards-info{
+        grid-template-columns: 1fr;
+    }
+
+    .topo{
+        margin-inline: 0;
+    }
+
+    .preparo{
+        margin-inline: 0;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 900px){
+    .container{
+        max-width: 1100px;
+        margin-top: 12px;
+        padding-inline: 18px;
+    }
+
+    .topo{
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .meio{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-inline: 0;
+    }
+
+    .preparo{
+        margin-inline: 0;
+    }
 }

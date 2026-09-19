@@ -51,6 +51,38 @@ body{
     position: relative;
 }
 
+.sugestoes-busca{
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+}
+
+.sugestoes-busca[hidden]{
+    display: none;
+}
+
+.sugestoes-busca button{
+    width: 100%;
+    padding: 11px 14px;
+    border: 0;
+    border-bottom: 1px solid #e5ebe6;
+    background: #fff;
+    color: #315d45;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+}
+
+.sugestoes-busca button:hover{
+    background: #e7eee9;
+}
+
 .search img{
     width: 20px;
     position: absolute;
@@ -328,5 +360,32 @@ nav img{
         flex-direction: column;
         align-items: center;
         gap: 10px;
+    }
+}
+
+@media (max-width: 360px){
+    .navbar{
+        padding: 16px 12px;
+    }
+
+    .logo h1{
+        font-size: 1.75rem;
+    }
+
+    .hero{
+        width: 100%;
+        padding: 28px 12px 90px;
+    }
+
+    .texto h2{
+        font-size: 1.9rem;
+    }
+
+    .texto h3{
+        font-size: 1.3rem;
+    }
+
+    .botoes button{
+        padding: 11px 16px;
     }
 }
