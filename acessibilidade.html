@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acessibilidade</title>
+
+    <link rel="stylesheet" href="acessibilidade.css">
+    <link rel="stylesheet" href="acessibilidade-global.css">
+
+</head>
+
+<body>
+
+    <svg class="filtros">
+
+        <filter id="protanopia">
+
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.567 0.433 0     0 0
+                0.558 0.442 0     0 0
+                0     0.242 0.758 0 0
+                0     0     0     1 0">
+            </feColorMatrix>
+
+        </filter>
+
+        <filter id="deuteranopia">
+
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.625 0.375 0     0 0
+                0.700 0.300 0     0 0
+                0     0.300 0.700 0 0
+                0     0     0     1 0">
+            </feColorMatrix>
+
+        </filter>
+
+        <filter id="tritanopia">
+
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.950 0.050 0     0 0
+                0     0.433 0.567 0 0
+                0     0.475 0.525 0 0
+                0     0     0     1 0">
+            </feColorMatrix>
+
+        </filter>
+
+    </svg>
+
+    <button
+        id="abrirPainel"
+        class="botao-acessibilidade"
+        aria-label="Abrir acessibilidade">
+
+        <img src="pictures/Vector.png" alt="Acessibilidade">
+
+    </button>
+
+    <section
+        class="painel"
+        id="painel"
+        aria-label="Painel de acessibilidade">
+
+        <div id="telaPrincipal">
+
+            <header class="cabecalho">
+
+                <div class="icone-olho">
+                    👁
+                </div>
+
+
+                <div class="titulo">
+
+                    <h2>Acessibilidade</h2>
+
+                    <p>Personalize sua Experiência</p>
+
+                </div>
+
+
+                <button
+                    id="fechar"
+                    class="fechar"
+                    aria-label="Fechar painel">
+
+                    ✕
+
+                </button>
+
+            </header>
+
+            <div class="aviso">
+
+                Todas as configurações são aplicadas em tempo real
+                e melhoram a experiência de navegação.
+
+            </div>
+
+
+            <div class="card contraste-card">
+
+                <div class="icone-card">
+                    ◐
+                </div>
+
+
+                <div class="informacao">
+
+                    <h3>Alto Contraste</h3>
+
+                    <p>
+                        Melhora a legibilidade do texto
+                    </p>
+
+                </div>
+
+                <button
+                    id="botaoContraste"
+                    class="switch"
+                    aria-label="Ativar alto contraste">
+
+                    <span id="iconeContraste">☀️</span>
+
+                </button>
+
+            </div>
+
+            <div class="card fonte-card">
+
+                <div class="icone-card icone-t">
+                    T
+                </div>
+
+
+                <div class="informacao">
+
+                    <h3>Tamanho da Fonte</h3>
+
+                    <p>
+                        Ajustar o tamanho da fonte
+                    </p>
+
+                </div>
+
+
+                <div class="botoes-fonte">
+
+                    <button id="diminuirFonte">
+                        A −
+                    </button>
+
+
+                    <button id="fonteNormal">
+
+                        <strong>A</strong>
+
+                        <span>Normal</span>
+
+                    </button>
+
+
+                    <button id="aumentarFonte">
+                        A +
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="opcoes">
+
+                <button
+                    id="leituraVoz"
+                    class="card-opcao">
+
+                    <div class="icone-opcao">
+                        🔊
+                    </div>
+
+                    <h3>Leitura em Voz</h3>
+
+                    <p>
+                        Ouvir o Conteúdo narrado
+                    </p>
+
+                </button>
+
+                <button
+                    id="abrirDaltonismo"
+                    class="card-opcao">
+
+                    <div class="icone-opcao">
+                        👁
+                    </div>
+
+                    <h3>
+                        Modos de<br>
+                        Daltonismo
+                    </h3>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div
+            id="telaDaltonismo"
+            class="tela-daltonismo">
+
+            <header class="cabecalho">
+
+                <div class="icone-olho">
+                    👁
+                </div>
+
+
+                <div class="titulo">
+
+                    <h2>Acessibilidade</h2>
+
+                    <p>Personalize sua Experiência</p>
+
+                </div>
+
+
+                <button
+                    id="fecharDaltonismo"
+                    class="fechar"
+                    aria-label="Fechar painel">
+
+                    ✕
+
+                </button>
+
+            </header>
+
+            <div class="conteudo-daltonismo">
+
+
+                <div class="titulo-daltonismo">
+
+                    <div class="icone-card">
+                        👁
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Modos de Daltonismo
+                        </h2>
+
+                        <p>
+                            Adaptação de cores para melhor visualização
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="modo-cor"
+                    data-modo="protanopia">
+
+                    <div class="texto-cor">
+
+                        <h3>Protanopia</h3>
+
+                        <p>Vermelho-verde</p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor protanopia-1"></span>
+
+                        <span class="cor protanopia-2"></span>
+
+                        <span class="cor protanopia-3"></span>
+
+                    </div>
+
+                </button>
+
+                <button
+                    class="modo-cor"
+                    data-modo="deuteranopia">
+
+                    <div class="texto-cor">
+
+                        <h3>Deuteranopia</h3>
+
+                        <p>Verde-vermelho</p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor deuteranopia-1"></span>
+
+                        <span class="cor deuteranopia-2"></span>
+
+                        <span class="cor deuteranopia-3"></span>
+
+                    </div>
+
+                </button>
+
+                <button
+                    class="modo-cor"
+                    data-modo="tritanopia">
+
+                    <div class="texto-cor">
+
+                        <h3>Tritanopia</h3>
+
+                        <p>Azul-amarelo</p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor tritanopia-1"></span>
+
+                        <span class="cor tritanopia-2"></span>
+
+                        <span class="cor tritanopia-3"></span>
+
+                    </div>
+
+                </button>
+
+                <button
+                    class="modo-cor"
+                    data-modo="normal">
+
+                    <div class="texto-cor">
+
+                        <h3>Visão Padrão</h3>
+
+                        <p>Cores originais</p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor padrao-1"></span>
+
+                        <span class="cor padrao-2"></span>
+
+                        <span class="cor padrao-3"></span>
+
+                    </div>
+
+                </button>
+
+                <button
+                    id="voltar"
+                    class="voltar">
+
+                    ← Voltar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="acessibilidade-global.js"></script>
+
+</body>
+
+</html>
