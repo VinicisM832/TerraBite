@@ -30,6 +30,7 @@ window.confirmarAcaoNaTela = function (mensagem) {
 
 (function () {
     const CHAVE_TEMA = "terraBiteTema";
+    const CHAVE_DALTONISMO = "terraBiteDaltonismo";
 
     function aplicarTema(escuro) {
         document.body.classList.toggle("modo-escuro", escuro);
@@ -38,6 +39,16 @@ window.confirmarAcaoNaTela = function (mensagem) {
 
     const temaSalvo = localStorage.getItem(CHAVE_TEMA);
     aplicarTema(temaSalvo === "escuro");
+
+    function aplicarModoDaltonismo(modo) {
+        document.body.classList.remove("protanopia", "deuteranopia", "tritanopia");
+        if (["protanopia", "deuteranopia", "tritanopia"].includes(modo)) {
+            document.body.classList.add(modo);
+            localStorage.setItem(CHAVE_DALTONISMO, modo);
+        } else {
+            localStorage.setItem(CHAVE_DALTONISMO, "normal");
+        }
+    }
 
     function garantirFiltrosDaltonismo() {
         if (
@@ -78,11 +89,19 @@ window.confirmarAcaoNaTela = function (mensagem) {
     }
 
     garantirFiltrosDaltonismo();
+    aplicarModoDaltonismo(localStorage.getItem(CHAVE_DALTONISMO) || "normal");
 
-    const trigger = document.querySelector(".acessibilidade") || document.getElementById("abrirPainel");
+    let trigger = document.querySelector(".acessibilidade") || document.getElementById("abrirPainel");
+    if (!trigger) {
+        trigger = document.createElement("a");
+        trigger.className = "acessibilidade";
+        trigger.href = "#";
+        trigger.setAttribute("aria-label", "Abrir acessibilidade");
+        trigger.title = "Acessibilidade";
+        trigger.innerHTML = '<img src="pictures/Vector.png" alt="Acessibilidade">';
+        document.body.appendChild(trigger);
+    }
     let painel = document.getElementById("painel");
-
-    if (!trigger) return;
 
     if (!painel) {
         painel = document.createElement("section");
@@ -424,8 +443,7 @@ window.confirmarAcaoNaTela = function (mensagem) {
             };
 
             const aplicarModo = function () {
-                document.body.classList.remove("protanopia", "deuteranopia", "tritanopia");
-                if (modo !== "normal") document.body.classList.add(modo);
+                aplicarModoDaltonismo(modo);
                 document.getElementById("telaDaltonismo").hidden = true;
                 document.getElementById("telaPrincipal").hidden = false;
                 fecharConfirmacao();
