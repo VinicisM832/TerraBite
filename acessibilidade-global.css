@@ -299,6 +299,25 @@ body.modo-escuro .conteudo-site,
 body.modo-escuro section,
 body.modo-escuro article,
 body.modo-escuro .card,
+body.modo-escuro .banners,
+body.modo-escuro .card-receita,
+body.modo-escuro .comunidade-card,
+body.modo-escuro .cards-info,
+body.modo-escuro .partes,
+body.modo-escuro .preparo,
+body.modo-escuro .avaliacao-site,
+body.modo-escuro .forum,
+body.modo-escuro .perfil-cabecalho,
+body.modo-escuro .receita-salva,
+body.modo-escuro .receita-historico,
+body.modo-escuro .dica-perfil,
+body.modo-escuro .avaliacao-perfil,
+body.modo-escuro .comentario,
+body.modo-escuro .comentario-perfil,
+body.modo-escuro .sucesso-box,
+body.modo-escuro .input-box,
+body.modo-escuro .sugestoes-busca,
+body.modo-escuro .sugestoes-busca button,
 body.modo-escuro .publicar-comunidade,
 body.modo-escuro .publicar-receita,
 body.modo-escuro .historico-comentarios,
@@ -306,6 +325,7 @@ body.modo-escuro .dados-perfil,
 body.modo-escuro .receita-publicada {
     background-color: #1d2821 !important;
     color: #edf5ef !important;
+    border-color: #3f5546 !important;
 }
 
 body.modo-escuro h1,
@@ -329,6 +349,19 @@ body.modo-escuro select {
     border-color: #607568 !important;
 }
 
+body.modo-escuro img {
+    background-color: transparent !important;
+    filter: none !important;
+}
+
+body.modo-escuro .card-receita > img,
+body.modo-escuro .comunidade-card > img,
+body.modo-escuro .receita-publicada > img,
+body.modo-escuro .foto-receita img {
+    background-color: transparent !important;
+    mix-blend-mode: normal;
+}
+
 body.modo-escuro .painel {
     background: #172019;
     border: 1px solid #607568;
@@ -347,7 +380,13 @@ body.modo-escuro .painel .botoes-fonte button {
 }
 
 body.modo-escuro .painel .card-opcao p,
-body.modo-escuro .painel .informacao p {
+body.modo-escuro .painel .informacao p,
+body.modo-escuro .descricao,
+body.modo-escuro .card-mini p,
+body.modo-escuro .forum-introducao,
+body.modo-escuro .forum-login,
+body.modo-escuro .comentario time,
+body.modo-escuro .receita-publicada small {
     color: #bdd0c1 !important;
 }
 
