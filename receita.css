@@ -35,8 +35,8 @@ body{
 /* TOPO */
 
 .topo{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    display:flex;
+    flex-wrap: wrap;
     gap:20px;
     margin-bottom:20px;
     align-items:stretch;
@@ -61,8 +61,8 @@ body{
 }
 
 .info-lateral{
-    display:grid;
-    grid-template-rows:3fr 1fr;
+    display:flex;
+    flex-direction: column;
     gap:15px;
 }
 
@@ -71,8 +71,8 @@ body{
     border-radius:12px;
     padding:20px;
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    display:flex;
+    flex-wrap: wrap;
     gap:15px;
 }
 
@@ -144,8 +144,8 @@ body{
 /* MEIO */
 
 .meio{
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    display:flex;
+    flex-wrap: wrap;
     gap:20px;
     margin-bottom:20px;
 }
@@ -262,7 +262,8 @@ body{
 }
 
 .comentario-form{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     margin: 20px 0 25px;
 }
@@ -292,7 +293,8 @@ body{
 }
 
 .comentarios-lista{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
@@ -357,22 +359,16 @@ body{
     }
 
     .topo{
-        grid-template-columns:1fr;
         margin-inline: 8px;
     }
 
     .meio{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
         gap:16px;
         margin-inline: 8px;
     }
 
     .preparo{
         margin-inline: 8px;
-    }
-
-    .cards-info{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -419,12 +415,7 @@ body{
 
 @media (max-width: 430px){
     .meio{
-        grid-template-columns: 1fr;
         margin-inline: 0;
-    }
-
-    .cards-info{
-        grid-template-columns: 1fr;
     }
 
     .topo{
@@ -443,12 +434,7 @@ body{
         padding-inline: 18px;
     }
 
-    .topo{
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    }
-
     .meio{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         margin-inline: 0;
     }
 

@@ -7,11 +7,11 @@ const fechar =
 const abrirPainel =
     document.getElementById("abrirPainel");
 
-const botaoContraste =
-    document.getElementById("botaoContraste");
+const botaoTema =
+    document.getElementById("botaoTema");
 
-const iconeContraste =
-    document.getElementById("iconeContraste");
+const iconeTema =
+    document.getElementById("iconeTema");
 
 const diminuirFonte =
     document.getElementById("diminuirFonte");
@@ -56,32 +56,15 @@ abrirPainel.addEventListener("click", function () {
 
 });
 
-botaoContraste.addEventListener("click", function () {
+botaoTema.addEventListener("click", function () {
 
-    document.body.classList.toggle("alto-contraste");
+    const escuro = !document.body.classList.contains("modo-escuro");
+    document.body.classList.toggle("modo-escuro", escuro);
+    localStorage.setItem("terraBiteTema", escuro ? "escuro" : "claro");
 
-
-    if (
-        document.body.classList.contains("alto-contraste")
-    ) {
-
-        iconeContraste.textContent = "🌙";
-
-        botaoContraste.setAttribute(
-            "aria-label",
-            "Desativar alto contraste"
-        );
-
-    } else {
-
-        iconeContraste.textContent = "☀️";
-
-        botaoContraste.setAttribute(
-            "aria-label",
-            "Ativar alto contraste"
-        );
-
-    }
+    iconeTema.textContent = escuro ? "🌙" : "☀️";
+    botaoTema.setAttribute("aria-label", escuro ? "Ativar modo claro" : "Ativar modo escuro");
+    botaoTema.setAttribute("aria-pressed", String(escuro));
 
 });
 

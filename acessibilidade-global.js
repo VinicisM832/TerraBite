@@ -28,129 +28,17 @@ window.confirmarAcaoNaTela = function (mensagem) {
     });
 };
 
-(function criarChatMagali() {
-    if (document.getElementById("chatMagali")) return;
-
-    const trigger = document.querySelector(".acessibilidade") || document.getElementById("abrirPainel");
-    if (!trigger) return;
-
-    const chat = document.createElement("aside");
-    chat.id = "chatMagali";
-    chat.className = "chat-magali";
-    chat.hidden = true;
-    chat.setAttribute("aria-label", "Chat com Magali");
-    chat.innerHTML = `
-        <header class="chat-magali-cabecalho">
-            <div class="chat-magali-avatar" aria-hidden="true">M</div>
-            <div><strong>Magali</strong><span>Assistente do Terra Bite</span></div>
-            <button type="button" class="chat-magali-fechar" aria-label="Fechar chat">×</button>
-        </header>
-        <div class="chat-magali-mensagens" aria-live="polite"></div>
-        <form class="chat-magali-form">
-            <label class="sr-only" for="chatMagaliEntrada">Mensagem para Magali</label>
-            <input id="chatMagaliEntrada" type="text" maxlength="240" placeholder="Pergunte sobre o Terra Bite..." autocomplete="off">
-            <button type="submit" aria-label="Enviar mensagem">➤</button>
-        </form>`;
-    document.body.appendChild(chat);
-
-    const mensagens = chat.querySelector(".chat-magali-mensagens");
-    const entrada = chat.querySelector("#chatMagaliEntrada");
-    const adicionarMensagem = function (texto, autor) {
-        const mensagem = document.createElement("p");
-        mensagem.className = "chat-magali-mensagem " + autor;
-        mensagem.textContent = texto;
-        mensagens.appendChild(mensagem);
-        mensagens.scrollTop = mensagens.scrollHeight;
-    };
-    const responder = function (texto) {
-        const busca = texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-        const contem = function () {
-            return Array.from(arguments).some(function (termo) { return busca.includes(termo); });
-        };
-
-        if (/(^|\s)(oi|ola|olá|bom dia|boa tarde|boa noite)(\s|$)/i.test(texto)) {
-            return "Oi! Eu sou a Magali. Posso tirar dúvidas sobre receitas, dar dicas de cozinha e explicar como usar o Terra Bite.";
-        }
-        if (contem("como voce funciona", "o que voce faz", "ajuda")) {
-            return "Posso orientar sobre ingredientes, preparo, conservação e aproveitamento de alimentos. Também explico busca, perfil, comunidade, receitas salvas e acessibilidade.";
-        }
-        if (contem("melhor receita", "melhores receitas", "receita mais gostosa", "receita recomendada", "qual receita voce recomenda")) {
-            return "As melhores receitas do site, considerando as avaliações, são: Risoto de Talos de Espinafre, nota 4,8; Bolo de Talos de Beterraba, nota 4,7; Suco Verde com Folhas de Cenoura, nota 4,6; Farofa Nutritiva de Talos, nota 4,6; Geleia de Cascas de Frutas, nota 4,5; e Bowl de Frango com Legumes e Grãos, nota 4,5. Você pode abrir qualquer uma pela busca ou pela página Navegar Receitas.";
-        }
-        if (contem("qual receita", "quais receitas", "tem receita", "receitas disponiveis")) {
-            return "Temos suco verde com folhas de cenoura, bolo de talos de beterraba, geleia de cascas de frutas, farofa de talos, risoto de talos de espinafre e bowl de frango com legumes e grãos.";
-        }
-        if (contem("suco verde", "folha de cenoura")) {
-            return "O suco verde aproveita folhas de cenoura, maçã, couve, limão e água gelada. Bata tudo no liquidificador e coe apenas se preferir uma bebida mais leve.";
-        }
-        if (contem("bolo", "beterraba")) {
-            return "No bolo de talos de beterraba, bata os talos com os ingredientes líquidos, misture os secos e coloque o fermento por último. Asse em forno preaquecido a 180 °C.";
-        }
-        if (contem("geleia", "casca", "cascas")) {
-            return "As cascas de maçã, pera e pêssego podem virar geleia. Lave bem, cozinhe com água e açúcar e finalize com limão quando a mistura engrossar.";
-        }
-        if (contem("farofa", "talos")) {
-            return "Para a farofa, pique os talos pequenos, refogue com cebola, junte a farinha de mandioca e tempere com sal e cheiro-verde.";
-        }
-        if (contem("risoto", "espinafre")) {
-            return "No risoto, mantenha o caldo de legumes aquecido e acrescente aos poucos, mexendo sempre. Os talos de espinafre entram durante o cozimento.";
-        }
-        if (contem("substituir", "substituicao", "trocar ingrediente")) {
-            return "Você pode adaptar as receitas: maçã pode ser trocada por abacaxi ou laranja no suco, e os grãos do bowl podem ser arroz integral, quinoa ou feijão.";
-        }
-        if (contem("guardar", "conservar", "geladeira", "validade")) {
-            return "Guarde preparos frios em recipiente limpo e fechado na geladeira. Espere o alimento esfriar antes de tampar e confira cheiro e aparência antes de consumir.";
-        }
-        if (contem("salvar", "salva", "favorito", "bandeira")) {
-            return "Para salvar uma receita, abra o cartão ou a página dela e clique na bandeira. Depois você encontra tudo na seção Receitas salvas do seu Perfil.";
-        }
-        if (contem("buscar", "pesquisar", "barra de pesquisa")) {
-            return "Digite o nome ou um ingrediente na barra de pesquisa, como talos, cascas, beterraba ou frango. Ao escolher uma sugestão, você vai direto para a receita.";
-        }
-        if (contem("publicar", "publiquei", "postar")) {
-            return "Para publicar, entre no Perfil, preencha nome, descrição, ingredientes e modo de preparo. Na Comunidade, outras pessoas poderão ler, comentar e avaliar.";
-        }
-        if (contem("comunidade", "comentar", "avaliar")) {
-            return "Na Comunidade você pode conhecer receitas, filtrar por tema, comentar e dar estrelas. Para publicar uma receita completa, use seu Perfil.";
-        }
-        if (contem("acessibilidade", "voz", "imagem", "contraste", "daltonismo")) {
-            return "O botão de acessibilidade oferece leitura em voz, leitura por apontamento de textos e imagens, ajuste de fonte, alto contraste e modos de daltonismo.";
-        }
-        if (contem("perfil", "cadastro", "conta")) {
-            return "No Perfil você pode editar seus dados, publicar receitas, acompanhar o histórico, ver avaliações e acessar suas receitas salvas.";
-        }
-        if (contem("desperdicio", "aproveitamento", "talos", "sementes", "folhas")) {
-            return "A melhor dica é higienizar bem as partes aproveitáveis, retirar partes estragadas e usar talos, folhas, cascas e sementes em caldos, farofas, bolos e bebidas.";
-        }
-        return "Não encontrei essa informação ainda. Tente perguntar sobre uma receita, ingrediente, substituição, conservação, receitas salvas, comunidade ou acessibilidade.";
-    };
-
-    const abrir = function () {
-        chat.hidden = false;
-        if (!mensagens.children.length) adicionarMensagem("Oi! Eu sou a Magali. Como posso ajudar no Terra Bite?", "magali");
-        entrada.focus();
-    };
-    const fechar = function () { chat.hidden = true; };
-    const botao = document.createElement("button");
-    botao.type = "button";
-    botao.className = "chat-magali-botao";
-    botao.setAttribute("aria-label", "Conversar com Magali");
-    botao.title = "Conversar com Magali";
-    botao.innerHTML = "💬<span>Magali</span>";
-    document.body.appendChild(botao);
-    botao.addEventListener("click", abrir);
-    chat.querySelector(".chat-magali-fechar").addEventListener("click", fechar);
-    chat.querySelector(".chat-magali-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        const texto = entrada.value.trim();
-        if (!texto) return;
-        adicionarMensagem(texto, "usuario");
-        entrada.value = "";
-        window.setTimeout(function () { adicionarMensagem(responder(texto), "magali"); }, 250);
-    });
-})();
-
 (function () {
+    const CHAVE_TEMA = "terraBiteTema";
+
+    function aplicarTema(escuro) {
+        document.body.classList.toggle("modo-escuro", escuro);
+        localStorage.setItem(CHAVE_TEMA, escuro ? "escuro" : "claro");
+    }
+
+    const temaSalvo = localStorage.getItem(CHAVE_TEMA);
+    aplicarTema(temaSalvo === "escuro");
+
     function garantirFiltrosDaltonismo() {
         if (
             document.getElementById("protanopia") &&
@@ -212,8 +100,8 @@ window.confirmarAcaoNaTela = function (mensagem) {
                 <div class="aviso">Todas as configurações são aplicadas em tempo real e melhoram a experiência de navegação.</div>
                 <div class="card">
                     <div class="icone-card">◐</div>
-                    <div class="informacao"><h3>Alto Contraste</h3><p>Melhora a legibilidade do texto</p></div>
-                    <button id="botaoContraste" class="switch" aria-label="Ativar alto contraste"><span id="iconeContraste">☀️</span></button>
+                    <div class="informacao"><h3>Modo escuro</h3><p>Alternar entre modo claro e escuro</p></div>
+                    <button id="botaoTema" class="switch" aria-label="Ativar modo escuro" aria-pressed="false"><span id="iconeTema">☀️</span></button>
                 </div>
                 <div class="card">
                     <div class="icone-card">T</div>
@@ -340,13 +228,22 @@ window.confirmarAcaoNaTela = function (mensagem) {
     document.getElementById("fechar").addEventListener("click", fechar);
     document.getElementById("fecharDaltonismo").addEventListener("click", fechar);
 
-    document.getElementById("botaoContraste").addEventListener("click", function () {
-        document.body.classList.toggle("alto-contraste");
-        const ativo = document.body.classList.contains("alto-contraste");
-        document.getElementById("iconeContraste").textContent = ativo ? "🌙" : "☀️";
-        this.setAttribute("aria-label", ativo ? "Desativar alto contraste" : "Ativar alto contraste");
-        this.setAttribute("aria-pressed", String(ativo));
-    });
+    const botaoTema = document.getElementById("botaoTema");
+    const iconeTema = document.getElementById("iconeTema");
+    if (botaoTema && iconeTema) {
+        const atualizarControleTema = function () {
+            const escuro = document.body.classList.contains("modo-escuro");
+            iconeTema.textContent = escuro ? "🌙" : "☀️";
+            botaoTema.setAttribute("aria-label", escuro ? "Ativar modo claro" : "Ativar modo escuro");
+            botaoTema.setAttribute("aria-pressed", String(escuro));
+        };
+
+        atualizarControleTema();
+        botaoTema.addEventListener("click", function () {
+            aplicarTema(!document.body.classList.contains("modo-escuro"));
+            atualizarControleTema();
+        });
+    }
 
     let tamanhoFonte = 100;
     document.getElementById("diminuirFonte").addEventListener("click", function () {

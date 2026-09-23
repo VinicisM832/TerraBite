@@ -72,19 +72,25 @@
     const formularioPerfil = document.getElementById("perfilForm");
     const dadosPerfil = document.getElementById("dadosPerfil");
 
-    editarPerfil.addEventListener("click", function () {
-        dadosPerfil.hidden = true;
-        formularioPerfil.hidden = false;
-        document.getElementById("perfilNome").focus();
-    });
+    if (!editarPerfil.dataset.listenerAtivado) {
+        editarPerfil.dataset.listenerAtivado = "true";
+        editarPerfil.addEventListener("click", function () {
+            dadosPerfil.hidden = true;
+            formularioPerfil.hidden = false;
+            document.getElementById("perfilNome").focus();
+        });
+    }
 
-    document.addEventListener("perfil-atualizado", function () {
-        const perfilAtualizado = lerPerfil();
-        if (!perfilAtualizado) return;
-        atualizarDadosVisuais(perfilAtualizado);
-        dadosPerfil.hidden = false;
-        formularioPerfil.hidden = true;
-    });
+    if (!document.body.dataset.perfilAtualizadoListener) {
+        document.body.dataset.perfilAtualizadoListener = "true";
+        document.addEventListener("perfil-atualizado", function () {
+            const perfilAtualizado = lerPerfil();
+            if (!perfilAtualizado) return;
+            atualizarDadosVisuais(perfilAtualizado);
+            dadosPerfil.hidden = false;
+            formularioPerfil.hidden = true;
+        });
+    }
 
     const nomeExibido = document.getElementById("perfilNomeExibido");
     if (nomeExibido) nomeExibido.textContent = perfilSalvo.nome;
@@ -267,5 +273,8 @@
     desenharSalvas();
     desenharDicas();
     desenharAvaliacoes();
-    document.addEventListener("receitas-salvas-atualizadas", desenharSalvas);
+    if (!document.body.dataset.receitasSalvasListener) {
+        document.body.dataset.receitasSalvasListener = "true";
+        document.addEventListener("receitas-salvas-atualizadas", desenharSalvas);
+    }
 })();

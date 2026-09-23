@@ -239,13 +239,13 @@ label{
     flex: 1;
     border: none;
     outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
 
 .receitas-publicadas{
     display: flex;
     flex-direction: column;
-}
-    font-size: 1rem;
-    background: transparent;
 }
 
 .input-box .fa-eye{

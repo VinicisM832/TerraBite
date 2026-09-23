@@ -212,7 +212,8 @@ if (formulario) {
     }
 }
 
-if (perfilForm) {
+if (perfilForm && !perfilForm.dataset.listenerAtivado) {
+    perfilForm.dataset.listenerAtivado = "true";
     perfilForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -231,7 +232,8 @@ if (perfilForm) {
                 const statusExibido = document.getElementById("perfilStatusExibido");
                 if (nomeExibido) nomeExibido.textContent = dadosAtualizados.nome;
                 if (statusExibido) statusExibido.textContent = dadosAtualizados.status;
-                document.getElementById("perfilMensagem").textContent = "Alterações salvas com sucesso.";
+                const mensagem = document.getElementById("perfilMensagem");
+                if (mensagem) mensagem.textContent = "Alterações salvas com sucesso.";
                 document.dispatchEvent(new CustomEvent("perfil-atualizado"));
             }
         };

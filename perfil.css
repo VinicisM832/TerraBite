@@ -84,6 +84,20 @@ body{
     color: #66766d;
 }
 
+.perfil-cabecalho > div:last-child{
+    min-width: 0;
+}
+
+.perfil-cabecalho h2,
+.perfil-cabecalho p,
+.dados-perfil strong,
+.comentario-perfil strong,
+.comentario-perfil p,
+.dica-perfil strong,
+.dica-perfil p{
+    overflow-wrap: anywhere;
+}
+
 .perfil-avatar{
     width: 88px;
     height: 88px;
@@ -99,7 +113,8 @@ body{
 }
 
 .dados-perfil{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 14px;
     padding: 22px 24px;
     border: 1px solid #dfe7e1;
@@ -112,7 +127,8 @@ body{
 }
 
 .dados-perfil div{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 3px;
     padding-bottom: 10px;
     border-bottom: 1px solid #edf1ee;
@@ -160,6 +176,17 @@ body{
     border-top: 1px solid #dfe7e1;
 }
 
+.publicar-receita .input-area{
+    align-items: flex-start;
+    min-height: 96px;
+}
+
+.publicar-receita .input-area textarea{
+    display: block;
+    min-height: 72px;
+    line-height: 1.5;
+}
+
 .sem-cadastro {
     padding: 18px;
     border-radius: 12px;
@@ -184,8 +211,8 @@ body{
 }
 
 .perfil-resumo{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px;
     margin: 24px 0;
 }
@@ -233,13 +260,14 @@ body{
 }
 
 .historico-receitas{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
 .receitas-salvas{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -284,7 +312,8 @@ body{
 }
 
 .dicas-publicadas{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -301,7 +330,8 @@ body{
 }
 
 .avaliacoes-receitas{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
@@ -316,7 +346,7 @@ body{
 
 .avaliacao-perfil span{
     color: #b47700;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
 }
 
 .perfil-resumo{
@@ -345,11 +375,11 @@ body{
 }
 
 #perfilComentarios {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-#perfilComentarios { display: flex; flex-direction: column; gap: 12px; }
 
 .comentario-perfil {
     padding: 16px;
@@ -410,6 +440,6 @@ body{
     }
 
     .historico-receitas{
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }

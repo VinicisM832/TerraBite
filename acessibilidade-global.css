@@ -13,58 +13,6 @@
     z-index: 1000;
 }
 
-.chat-magali-botao {
-    position: fixed;
-    right: 24px;
-    bottom: 92px;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 12px 14px;
-    border: 0;
-    border-radius: 24px;
-    background: #377252;
-    color: #fff;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, .25);
-    cursor: pointer;
-    font: inherit;
-}
-
-.chat-magali-botao:hover { background: #24543d; }
-.chat-magali-botao span { font-size: 12px; font-weight: 600; }
-.chat-magali[hidden] { display: none; }
-.chat-magali {
-    position: fixed;
-    right: 24px;
-    bottom: 150px;
-    z-index: 1100;
-    width: min(360px, calc(100vw - 32px));
-    overflow: hidden;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, .28);
-}
-.chat-magali-cabecalho { display: flex; align-items: center; gap: 10px; padding: 14px; background: #377252; color: #fff; }
-.chat-magali-cabecalho strong, .chat-magali-cabecalho span { display: block; }
-.chat-magali-cabecalho span { margin-top: 2px; font-size: 11px; opacity: .85; }
-.chat-magali-avatar { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #d9fdd3; color: #24543d; font-weight: 700; }
-.chat-magali-avatar { display: flex; align-items: center; justify-content: center; }
-.chat-magali-fechar { margin-left: auto; border: 0; background: transparent; color: #fff; font-size: 25px; cursor: pointer; }
-.chat-magali-mensagens { display: flex; flex-direction: column; gap: 8px; max-height: 280px; padding: 14px; overflow-y: auto; background: #f3f6f3; }
-.chat-magali-mensagem { max-width: 85%; margin: 0; padding: 9px 11px; border-radius: 12px; font-size: 13px; line-height: 1.4; }
-.chat-magali-mensagem.magali { align-self: flex-start; background: #fff; color: #263c2e; }
-.chat-magali-mensagem.usuario { align-self: flex-end; background: #d9fdd3; color: #24543d; }
-.chat-magali-form { display: flex; gap: 8px; padding: 10px; background: #fff; }
-.chat-magali-form input { min-width: 0; flex: 1; padding: 10px; border: 1px solid #c9d8cd; border-radius: 20px; outline: none; font: inherit; }
-.chat-magali-form button { width: 40px; border: 0; border-radius: 50%; background: #377252; color: #fff; cursor: pointer; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-
-@media (max-width: 520px) {
-    .chat-magali-botao { right: 16px; bottom: 82px; }
-    .chat-magali { right: 16px; bottom: 138px; }
-}
-
 .painel[hidden] {
     display: none;
 }
@@ -339,6 +287,69 @@ body.alto-contraste .painel .modo-cor { background: #000; color: #fff; border: 2
 body.protanopia { filter: url('#protanopia'); }
 body.deuteranopia { filter: url('#deuteranopia'); }
 body.tritanopia { filter: url('#tritanopia'); }
+
+body.modo-escuro {
+    background: #141a17 !important;
+    color: #edf5ef !important;
+}
+
+body.modo-escuro .container,
+body.modo-escuro main,
+body.modo-escuro .conteudo-site,
+body.modo-escuro section,
+body.modo-escuro article,
+body.modo-escuro .card,
+body.modo-escuro .publicar-comunidade,
+body.modo-escuro .publicar-receita,
+body.modo-escuro .historico-comentarios,
+body.modo-escuro .dados-perfil,
+body.modo-escuro .receita-publicada {
+    background-color: #1d2821 !important;
+    color: #edf5ef !important;
+}
+
+body.modo-escuro h1,
+body.modo-escuro h2,
+body.modo-escuro h3,
+body.modo-escuro h4,
+body.modo-escuro p,
+body.modo-escuro label,
+body.modo-escuro span,
+body.modo-escuro strong,
+body.modo-escuro li,
+body.modo-escuro a {
+    color: #edf5ef !important;
+}
+
+body.modo-escuro input,
+body.modo-escuro textarea,
+body.modo-escuro select {
+    background: #111813 !important;
+    color: #edf5ef !important;
+    border-color: #607568 !important;
+}
+
+body.modo-escuro .painel {
+    background: #172019;
+    border: 1px solid #607568;
+}
+
+body.modo-escuro .painel .card,
+body.modo-escuro .painel .card-opcao {
+    background: #243329 !important;
+}
+
+body.modo-escuro .painel .aviso,
+body.modo-escuro .painel .icone-card,
+body.modo-escuro .painel .botoes-fonte button {
+    background: #304238 !important;
+    color: #edf5ef !important;
+}
+
+body.modo-escuro .painel .card-opcao p,
+body.modo-escuro .painel .informacao p {
+    color: #bdd0c1 !important;
+}
 
 @media (max-width: 560px){
     .painel{
