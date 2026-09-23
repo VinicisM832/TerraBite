@@ -1,4 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /* Botao de acessibilidade */
+
+.navbar{
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: #377252;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 50px;
+}
+
+.logo h1{
+    font-family: 'Imperial Script', cursive;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+}
+
+.logo-link{
+    text-decoration: none;
+}
+
+.search{
+    width: 40%;
+    position: relative;
+}
+
+.search img{
+    width: 20px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.search input{
+    width: 100%;
+
+    padding: 12px 20px 12px 45px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: rgb(236, 241, 235);
+
+    outline: none;
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+}
+
+nav a{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    transition: 0.3s ease;
+    
+}
+nav a:hover{
+    text-decoration: underline;
+    
+}
+
+nav img{
+    width: 24px;
+}
 .acessibilidade{
     position: fixed;
     right: 30px;
