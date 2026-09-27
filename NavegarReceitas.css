@@ -118,6 +118,7 @@ main{
 .imgtexto h2 {
     margin: 0; /* remove margem padrão */
 }
+
 .receitas{
     padding: 40px 60px;
 }
@@ -128,7 +129,7 @@ main{
     margin-bottom: 30px;
 }
 
-.grid-receitas{
+#grid-receitas{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -237,13 +238,13 @@ main{
     box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
-.grid-receitas{
+#grid-receitas{
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
 }
 
-.grid-receitas .card-receita{
+#grid-receitas .card-receita{
     flex: 1 1 calc(33.333% - 14px);
     min-width: 0;
 }
@@ -349,11 +350,11 @@ main{
         width: 100%;
     }
 
-    .grid-receitas{
+    #grid-receitas{
         gap: 16px;
     }
 
-    .grid-receitas .card-receita{
+    #grid-receitas .card-receita{
         flex-basis: calc(50% - 8px);
         padding: 10px;
     }
