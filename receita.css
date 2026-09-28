@@ -159,20 +159,103 @@ body{
     line-height:1.5;
 }
 
-/* RESPONSIVO */
+/* AJUSTES RESPONSIVOS - somente neste HTML */
 
-@media (max-width:768px){
-
-    .topo{
-        grid-template-columns:1fr;
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+        padding: 18px;
     }
 
-    .meio{
-        grid-template-columns:1fr;
+    .card-mini img,
+    .partes img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 15px;
+        padding: 12px;
     }
 
-    .cards-info{
-        grid-template-columns:1fr;
+    .topo,
+    .meio {
+        grid-template-columns: 1fr;
     }
 
+    .foto-receita {
+        height: 300px;
+    }
+
+    .cards-info {
+        grid-template-columns: 1fr 1fr;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .card-mini {
+        min-width: 0;
+    }
+
+    .card-mini img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .card-mini h4 {
+        font-size: 13px;
+    }
+
+    .card-mini p {
+        font-size: 11px;
+    }
+
+    .partes {
+        padding: 15px;
+    }
+
+    .partes img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .foto-receita {
+        height: 240px;
+    }
+
+    .cards-info {
+        grid-template-columns: 1fr 1fr;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .card-mini {
+        gap: 7px;
+    }
+
+    .card-mini img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .card-mini h4 {
+        font-size: 12px;
+    }
+
+    .card-mini p {
+        font-size: 10px;
+    }
+
+    .card,
+    .preparo {
+        padding: 15px;
+    }
 }
