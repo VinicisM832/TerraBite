@@ -122,6 +122,7 @@ nav a{
     transition: 0.3s ease;
     
 }
+
 nav a:hover{
     text-decoration: underline;
     
@@ -129,6 +130,7 @@ nav a:hover{
 
 nav img{
     width: 24px;
+    filter: brightness(0) invert(1);
 }
 
 

@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .acessibilidade {
     position: fixed;
@@ -20,30 +27,34 @@
     height: 30px;
     cursor: pointer;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body{
     font-family: 'Poppins', sans-serif;
-    background: #ffffff;
+    background: #F8F6F2;
     display: flex;
     justify-content: center;
     padding: 30px 20px;
 }
 
-.container{
+main{
     width: 100%;
     max-width: 80%; 
-    background: white;
-    padding: 35px;
+    padding: 20px 10px;
+    background-color: #184D35;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
+.container{
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+
 
 .logo{
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -52,9 +63,11 @@ body{
     width: 60px; 
 }
 
-.logo h2{
-
-    font-size: 2rem; 
+.logo-link, .logo h2{
+    color: #ffffff;
+    font-family: 'Imperial Script', cursive;
+    font-size: 3rem;
+    text-decoration: none;
 }
 
 h1{
@@ -62,149 +75,12 @@ h1{
     color: #4D8964;
     font-size: 2rem;
     margin-bottom: 25px;
+    
 }
 
 form{
     display: flex;
     flex-direction: column;
-}
-
-.perfil[hidden],
-#cadastroForm[hidden]{
-    display: none;
-}
-
-.perfil-cabecalho{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.perfil-cabecalho h2,
-.perfil-cabecalho p{
-    margin: 0;
-}
-
-.perfil-cabecalho p{
-    color: #777;
-    font-size: .9rem;
-}
-
-.perfil-avatar{
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: #4d8964;
-    color: white;
-    font-weight: 700;
-}
-
-.perfil-avatar{ display: flex; align-items: center; justify-content: center; }
-
-.perfil-mensagem{
-    min-height: 20px;
-    margin: 12px 0;
-    color: #2e7d32;
-    text-align: center;
-}
-
-.botao-secundario{
-    margin-top: 8px;
-    background: #e7eee9;
-    color: #184d35;
-}
-
-.editar-receita{
-    width: auto;
-    height: auto;
-    margin-top: 12px;
-    padding: 8px 12px;
-    border: 0;
-    border-radius: 8px;
-    background: #377252;
-    color: white;
-    font-size: .85rem;
-}
-
-.excluir-receita{
-    width: auto;
-    height: auto;
-    margin-top: 8px;
-    padding: 8px 12px;
-    border: 0;
-    border-radius: 8px;
-    background: #fbe8e8;
-    color: #a62e2e;
-    font-size: .85rem;
-}
-
-.publicar-receita{
-    margin-top: 35px;
-    padding-top: 28px;
-    border-top: 1px solid #d8ded9;
-}
-
-.publicar-receita h2,
-.publicar-receita p{
-    margin-top: 0;
-}
-
-.publicar-receita > p{
-    color: #777;
-    font-size: .9rem;
-    margin-bottom: 22px;
-}
-
-.input-area{
-    height: auto;
-    padding: 12px 16px;
-}
-
-.input-area textarea{
-    width: 100%;
-    border: 0;
-    outline: 0;
-    resize: vertical;
-    font: inherit;
-    background: transparent;
-}
-
-.receitas-publicadas{
-    display: grid;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.receita-publicada{
-    padding: 16px;
-    border: 1px solid #d8ded9;
-    border-radius: 12px;
-    background: #f8faf8;
-}
-
-.receita-publicada > img{
-    width: 100%;
-    max-height: 180px;
-    margin-bottom: 12px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.receita-publicada h3,
-.receita-publicada p{
-    margin: 0 0 8px;
-}
-
-.receita-publicada small{
-    color: #6d7d72;
-}
-
-.lista-vazia{
-    color: #777;
-    text-align: center;
 }
 
 label{
@@ -252,37 +128,6 @@ label{
 .input-box .fa-eye{
     color: #a8a8a8;
     cursor: pointer;
-}
-
-.genero{
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 35px;
-}
-
-.radio-card{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 15px 20px;
-
-    border: 1px solid #bdbdbd;
-    border-radius: 18px;
-
-    background: white;
-
-    cursor: pointer;
-}
-
-.radio-card input{
-    width: 20px;
-    height: 20px;
-}
-
-.radio-card span{
-    font-size: 1.2rem;
 }
 
 button{
@@ -418,6 +263,7 @@ button:hover{
     }
 }
 
+/*responsividade/adiconar o que falta*/
 @media (max-width: 480px){
     body{
         padding: 12px;
@@ -456,29 +302,5 @@ button:hover{
         bottom: 14px;
         width: 56px;
         height: 56px;
-    }
-}
-
-.receitas-publicadas{
-    display: grid;
-}
-
-.receita-publicada{
-    min-width: 0;
-}
-
-.receita-publicada > img{
-    height: 180px;
-}
-
-@media (max-width: 900px){
-    .receitas-publicadas{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 520px){
-    .receitas-publicadas{
-        grid-template-columns: minmax(0, 1fr);
     }
 }

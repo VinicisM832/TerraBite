@@ -97,6 +97,7 @@ nav a:hover{
 
 nav img{
     width: 24px;
+    filter: brightness(0) invert(1);
 }
 
 /*corpo*/
