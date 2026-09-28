@@ -337,7 +337,26 @@
 }
 
 @media (max-width: 520px){
+    .comunidade-grid{
+        gap: 12px;
+    }
+
+    .comunidade-card{
+        flex: 1 1 calc(50% - 6px);
+        min-width: 0;
+        padding: 10px;
+    }
+
     .comunidade-card > img{
-        height: 210px;
+        height: 130px;
+    }
+
+    .comunidade-card h3{
+        font-size: .95rem;
+    }
+
+    .comunidade-acoes{
+        align-items: stretch;
+        flex-direction: column;
     }
 }
