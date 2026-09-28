@@ -98,7 +98,7 @@ window.confirmarAcaoNaTela = function (mensagem) {
         trigger.href = "#";
         trigger.setAttribute("aria-label", "Abrir acessibilidade");
         trigger.title = "Acessibilidade";
-        trigger.innerHTML = '<img src="pictures/Vector.png" alt="Acessibilidade">';
+        trigger.innerHTML = '<img src="pictures/Vector%20(1).png" alt="Acessibilidade">';
         document.body.appendChild(trigger);
     }
     let painel = document.getElementById("painel");

@@ -126,9 +126,6 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .feed-cabecalho h2{
@@ -151,8 +148,8 @@
 }
 
 .comunidade-grid{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -184,14 +181,11 @@
 }
 
 .comunidade-grid{
-    display: flex;
-    flex-wrap: wrap;
     align-items: stretch;
 }
 
 .comunidade-card{
-    flex: 1 1 calc(33.333% - 14px);
-    min-width: 260px;
+    min-width: 0;
 }
 
 .comunidade-card h3,
@@ -336,13 +330,19 @@
     }
 }
 
+@media (max-width: 900px){
+    .comunidade-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 520px){
     .comunidade-grid{
         gap: 12px;
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .comunidade-card{
-        flex: 1 1 calc(50% - 6px);
         min-width: 0;
         padding: 10px;
     }

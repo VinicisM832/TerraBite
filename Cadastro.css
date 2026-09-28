@@ -244,8 +244,9 @@ label{
 }
 
 .receitas-publicadas{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
 }
 
 .input-box .fa-eye{
@@ -459,12 +460,25 @@ button:hover{
 }
 
 .receitas-publicadas{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    display: grid;
 }
 
 .receita-publicada{
-    flex: 1 1 calc(50% - 6px);
     min-width: 0;
+}
+
+.receita-publicada > img{
+    height: 180px;
+}
+
+@media (max-width: 900px){
+    .receitas-publicadas{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px){
+    .receitas-publicadas{
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
