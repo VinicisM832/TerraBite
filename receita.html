@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolo de Beterraba</title>
+    <link rel="icon" type="image/png" href="pictures/image 15.png">
+
+
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="receita.css">
+
+
+<style>
+/* AJUSTES RESPONSIVOS - somente neste HTML */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+        padding: 18px;
+    }
+
+    .card-mini img,
+    .partes img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 15px;
+        padding: 12px;
+    }
+
+    .topo,
+    .meio {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-receita {
+        height: 300px;
+    }
+
+    .cards-info {
+        grid-template-columns: 1fr 1fr;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .card-mini {
+        min-width: 0;
+    }
+
+    .card-mini img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .card-mini h4 {
+        font-size: 13px;
+    }
+
+    .card-mini p {
+        font-size: 11px;
+    }
+
+    .partes {
+        padding: 15px;
+    }
+
+    .partes img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+    }
+
+    .foto-receita {
+        height: 240px;
+    }
+
+    .cards-info {
+        grid-template-columns: 1fr 1fr;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .card-mini {
+        gap: 7px;
+    }
+
+    .card-mini img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .card-mini h4 {
+        font-size: 12px;
+    }
+
+    .card-mini p {
+        font-size: 10px;
+    }
+
+    .card,
+    .preparo {
+        padding: 15px;
+    }
+}
+</style>
+
+</head>
+<body>
+     <header class="navbar">
+
+        <a href="HomePage.html" class="logo-link">
+    <div class="logo">
+        <img src="icons/ICONE (1).png" alt="Logo Terra Bite">
+        <h1>Terra Bite</h1>
+    </div>
+</a>
+
+      <div class="search">
+    <img src="icons/Vector.png" alt="Pesquisar">
+
+    <input
+        type="text"
+        placeholder="Ex: Casca de batata, Talos, Bananas..."
+    >
+</div>
+
+               <nav>
+            <a href="Cadastro.html">
+                <img src="icons/livro.png" alt="imagem de livro">
+                Educação
+            </a>
+
+            <a href="Cadastro.html">
+                <img src="icons/icone perfil.png" alt="silhueta de uma pessoa">
+                Perfil
+            </a>
+        </nav>
+
+
+    </header>
+
+
+<div class="container">
+
+    <!-- TOPO -->
+    <section class="topo">
+        <div class="foto-receita">
+            <img src="pictures/bolobeterraba.png" alt="Bolo de Beterraba">
+
+        </div>
+
+        <div class="info-lateral">
+
+            <div class="cards-info">
+
+                <div class="card-mini">
+                    <img src="icons/colher.png" alt="">
+                    <div>
+                        <h4>Dificuldade</h4>
+                        <p>Média</p>
+                    </div>
+                </div>
+
+                <div class="card-mini">
+                    <img src="icons/estrela.png" alt="">
+                    <div>
+                        <h4>Avaliação</h4>
+                        <p>4.7 (300)</p>
+                    </div>
+                </div>
+
+                <div class="card-mini">
+                    <img src="icons/relogio.png" alt="">
+                    <div>
+                        <h4>Preparo</h4>
+                        <p>50 min</p>
+                    </div>
+                </div>
+
+                <div class="card-mini">
+                    <img src="icons/bolo.png" alt="">
+                    <div>
+                        <h4>Tipo</h4>
+                        <p>Sobremesa</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="partes">
+                <img src="icons/folha.png" alt="">
+                <div>
+                    <h4>Partes Reaproveitadas</h4>
+                    <p>Talos de beterraba</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INGREDIENTES E DICAS -->
+    <section class="meio">
+
+        <div class="card">
+            <h2>Ingredientes</h2>
+
+            <ul>
+                <li>1 xícara de talos de beterraba bem picados</li>
+                <li>3 ovos</li>
+                <li>1/2 xícara de óleo</li>
+                <li>1 xícara de açúcar</li>
+                <li>1/2 xícara de leite</li>
+                <li>1 xícara de farinha de trigo</li>
+                <li>1/2 xícara de chocolate em pó</li>
+                <li>1 colher (sopa) de fermento</li>
+            </ul>
+
+            <h3>Cobertura (opcional)</h3>
+
+            <ul>
+                <li>Cobertura</li>
+                <li>1/2 caixa de leite condensado</li>
+                <li>1 colher (sopa) de manteiga</li>
+                <li>2 colheres (sopa) de chocolate em pó</li>
+                <li>Leve ao fogo até engrossar e jogue sobre o bolo</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Dicas</h2>
+
+            <p>
+                Os talos deixam o bolo mais úmido e nutritivo,
+                sem alterar muito o sabor do chocolate.
+            </p>
+
+            <p>
+                Dá pra substituir parte da farinha por aveia para deixar mais saudável.
+            </p>
+
+            <p>
+                Se quiser, adicione castanhas ou gotas de chocolate na massa.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- MODO DE PREPARO -->
+    <section class="preparo">
+        <h2>Modo de Preparo</h2>
+
+        <ol>
+            <li>Lave bem os talos de beterraba e pique em pedaços pequenos.</li>
+            <li>No liquidificador, bata os talos com os ovos, óleo e leite.</li>
+            <li>Misture o açúcar, farinha e chocolate.</li>
+            <li>Adicione a mistura líquida e mexa bem.</li>
+            <li>Acrescente o fermento por último.</li>
+            <li>Despeje em uma forma untada.</li>
+            <li>Asse em forno preaquecido a 180°C.</li>
+            <li>Espere esfriar antes de desenformar.</li>
+        </ol>
+    </section>
+
+</div>
+    <div class="acessibilidade">
+        <img src="pictures/Vector.png" alt="Acessibilidade">
+    </div>
+</body>
+</html>

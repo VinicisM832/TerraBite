@@ -1,112 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
-
-.acessibilidade{
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    width: 65px;
-    height: 65px;
-    z-index: 10;
-}
-
-.acessibilidade img{
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background: #F8F6F2;
-}
-
-
-.navbar{
-    width: 100%;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 40px;
-
-    background: #377252;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img{
-    width: 50px;
-}
-
-.logo h1{
-    font-family: 'Imperial Script', cursive;
-    font-size: 3rem;
-    color: rgb(255, 255, 255);
-}
-
-.logo-link{
-    text-decoration: none;
-}
-
-.search{
-    width: 40%;
-    position: relative;
-}
-
-.search img{
-    width: 20px;
-    position: absolute;
-    left: 15px;
-    top: 50%;
-
-    transform: translateY(-50%);
-}
-
-.search input{
-    width: 100%;
-
-    padding: 12px 20px 12px 45px;
-
-    border: none;
-    border-radius: 30px;
-
-    background: rgb(236, 241, 235);
-
-    outline: none;
-}
-
-nav{
-    display: flex;
-    gap: 30px;
-}
-
-nav a{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    transition: 0.3s ease;
-    
-}
-nav a:hover{
-    text-decoration: underline;
-    
+body {
+    font-family: "Montserrat", Arial, sans-serif;
+    background-color: #f7f8f2;
+    color: #111;
 }
 
 nav img{
@@ -114,100 +15,263 @@ nav img{
     filter: brightness(0) invert(1);
 }
 
-.banners-box{
-    width: min(1100px, calc(100% - 48px));
-    margin: 40px auto;
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 52px 25px 80px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.dados {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 70px;
+    margin-bottom: 52px;
 }
 
-.banners{
-    min-width: 0;
-    padding: 24px;
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+.card {
+    width: 31%;
+    min-height: 168px;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 20px;
+
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.14);
 }
 
-.banners h3{
-    margin-bottom: 8px;
-    color: #377252;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+.card-vermelho {
+    background-color: #f8eae6;
 }
 
-.banners p{
-    color: #555;
+.card-cinza {
+    background-color: #eef0eb;
+}
+
+.card-verde {
+    background-color: #eaf2e4;
+}
+
+
+/* =========================
+   ÍCONES
+========================= */
+
+.icone {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.card-vermelho .icone {
+    background-color: #f7dcd6;
+    color: #df6659;
+}
+
+.card-cinza .icone {
+    background-color: #dce7dc;
+    color: #397758;
+}
+
+.card-verde .icone {
+    background-color: #dcebd2;
+    color: #72ad62;
+}
+
+
+/* =========================
+   NÚMEROS DOS CARDS
+========================= */
+
+.card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.card p {
+    max-width: 280px;
+    font-size: 13px;
     line-height: 1.5;
+    color: #555;
 }
 
-.banners-box{
+
+/* =========================
+   SEÇÃO IMPACTO
+========================= */
+
+.impacto {
+    background-color: white;
+    border-radius: 15px;
+
+    padding: 55px;
+
     display: flex;
-    flex-wrap: wrap;
+
+    /* faz os dois lados terem a mesma altura */
     align-items: stretch;
+
+    gap: 55px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
 }
 
-.banners{
-    flex: 1 1 calc(33.333% - 14px);
+
+/* =========================
+   IMAGEM
+========================= */
+
+.imagem {
+    width: 48%;
+    height: 570px;
+
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
-@media (max-width: 768px){
-    .navbar{
-        height: auto;
-        flex-wrap: wrap;
-        gap: 16px;
-        padding: 18px 20px;
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+    flex: 1;
+}
+
+.conteudo h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    color: #7a9b7e;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    margin-bottom: 28px;
+}
+
+.texto {
+    font-size: 18px;
+    line-height: 1.55;
+
+    margin-bottom: 22px;
+}
+
+.conteudo h3 {
+    color: #006b2d;
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+.conteudo ul {
+    padding-left: 22px;
+}
+
+.conteudo li {
+    font-size: 17px;
+    line-height: 1.6;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 850px) {
+
+    main {
+        padding: 35px 20px;
     }
 
-    .logo{
+    .dados {
+        gap: 20px;
+    }
+
+    .card {
+        width: 33%;
+    }
+
+    .impacto {
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .imagem {
         width: 100%;
-        justify-content: center;
+        height: 350px;
     }
 
-    .search{
-        width: 100%;
-        order: 3;
-    }
-
-    nav{
-        margin: 0 auto;
-    }
-
-    .banners-box{
-        gap: 18px;
-        padding: 28px 20px 90px;
-    }
-
-    .acessibilidade{
-        right: 15px;
-        bottom: 15px;
-        width: 56px;
-        height: 56px;
+    .conteudo {
+        max-width: 100%;
     }
 }
 
-@media (max-width: 420px){
-    .navbar{
-        padding: 16px 12px;
+
+@media (max-width: 600px) {
+
+    .dados {
+        flex-direction: column;
     }
 
-    .logo h1{
-        font-size: 2.2rem;
-    }
-
-    nav{
+    .card {
         width: 100%;
-        justify-content: space-around;
-        gap: 10px;
     }
 
-    .banners{
-        flex-basis: calc(50% - 9px);
-        padding: 16px;
+    .impacto {
+        padding: 20px;
     }
 
-    .banners h3{
-        font-size: 1.2rem;
+    .imagem {
+        height: 300px;
+    }
+
+    .conteudo h1 {
+        font-size: 19px;
+    }
+
+    .texto {
+        font-size: 14px;
     }
 }
-
