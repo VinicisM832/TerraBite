@@ -199,5 +199,14 @@ nav img{
         justify-content: space-around;
         gap: 10px;
     }
+
+    .banners{
+        flex-basis: calc(50% - 9px);
+        padding: 16px;
+    }
+
+    .banners h3{
+        font-size: 1.2rem;
+    }
 }
 

@@ -458,4 +458,13 @@ button:hover{
     }
 }
 
-.receitas-publicadas{ display: flex; flex-direction: column; }
+.receitas-publicadas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.receita-publicada{
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+}

@@ -3,7 +3,6 @@
 // =========================================================
 
 const formulario = document.getElementById("cadastroForm");
-const perfil = document.getElementById("perfil");
 const perfilForm = document.getElementById("perfilForm");
 const fotoPerfilInput = document.getElementById("perfilFotoArquivo");
 const chavePerfil = "terraBitePerfil";
@@ -24,37 +23,6 @@ function salvarPerfil(dados) {
         return false;
     }
 }
-
-function mostrarPerfil(dados) {
-    if (!dados || !perfil) return;
-
-    document.getElementById("perfilNome").value = dados.nome || "";
-    const apelido = document.getElementById("perfilApelido");
-    if (apelido) apelido.value = dados.apelido || dados.nome || "";
-    document.getElementById("perfilAniversario").value = dados.aniversario || "";
-    document.getElementById("perfilEmail").value = dados.email || "";
-    const status = document.getElementById("perfilStatus");
-    if (status) status.value = dados.status || "Compartilhando receitas e dicas";
-    const nomeExibido = document.getElementById("perfilNomeExibido");
-    const statusExibido = document.getElementById("perfilStatusExibido");
-    const fotoPerfil = document.getElementById("perfilFoto");
-    const iniciais = document.getElementById("perfilIniciais");
-
-    if (nomeExibido) nomeExibido.textContent = dados.nome || "Meu perfil";
-    if (statusExibido) statusExibido.textContent = dados.status || "Compartilhando receitas e dicas";
-    if (fotoPerfil && dados.foto) {
-        fotoPerfil.src = dados.foto;
-        fotoPerfil.hidden = false;
-        if (iniciais) iniciais.hidden = true;
-    }
-    if (formulario) formulario.hidden = true;
-    perfil.hidden = false;
-    const tituloPagina = document.querySelector("h1");
-    if (tituloPagina) tituloPagina.textContent = "Meu perfil";
-}
-
-const perfilSalvo = lerPerfil();
-if (perfilSalvo) mostrarPerfil(perfilSalvo);
 
 // Só executa se a página atual tiver o formulário de cadastro
 if (formulario) {
@@ -254,7 +222,6 @@ if (perfilForm && !perfilForm.dataset.listenerAtivado) {
 const novoCadastro = document.getElementById("novoCadastro");
 if (novoCadastro) {
     novoCadastro.addEventListener("click", function () {
-        perfil.hidden = true;
         formulario.hidden = false;
         formulario.reset();
         document.querySelector("h1").textContent = "Criar conta";

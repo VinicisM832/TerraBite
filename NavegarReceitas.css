@@ -134,15 +134,6 @@ main{
     flex-wrap: wrap;
     gap: 20px;
 }
-/* Tablet */
-@media (max-width: 1024px){
-}
-
-/* Celular */
-@media (max-width: 768px){
-}
-
-
 .card-receita{
     background: white;
     border-radius: 12px;
@@ -298,6 +289,12 @@ main{
 
 }
 
+@media (max-width: 1024px){
+    #grid-receitas .card-receita{
+        flex-basis: calc(50% - 10px);
+    }
+}
+
 @media (max-width: 768px){
     .navbar{
         height: auto;
@@ -317,8 +314,12 @@ main{
     }
 
     nav{
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
+        gap: 12px 20px;
     }
 
     .receitas{
@@ -333,6 +334,10 @@ main{
         flex: 1 1 calc(50% - 8px);
         min-width: 0;
         padding: 14px;
+    }
+
+    #grid-receitas .card-receita{
+        flex-basis: calc(50% - 8px);
     }
 
     .card-receita > img{
