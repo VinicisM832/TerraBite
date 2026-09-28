@@ -96,20 +96,12 @@ else {
             <div class="info">
                 <div>
                     <img src="icons/relógio.png" alt="Tempo">
-<<<<<<< HEAD
-                    <span>${receitas.tempo} min</span>
-=======
-                    <span>${receita.tempo}</span>
->>>>>>> 64fce45ff44f3f2217fce12d85f9cb7e6cc4d43c
+                    <span>${receitas.tempo}</span>
                 </div>
 
                 <div>
                     <img src="pictures/estrela.png" alt="Estrela">
-<<<<<<< HEAD
-                    <span>${receitas.nota.toFixed(1)}</span>
-=======
-                    <span>${receita.nota}</span>
->>>>>>> 64fce45ff44f3f2217fce12d85f9cb7e6cc4d43c
+                    <span>${receitas.nota}</span>
                 </div>
             </div>
         `;
