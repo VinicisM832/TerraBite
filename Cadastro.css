@@ -7,21 +7,6 @@
     box-sizing: border-box;
 }
 
-.acessibilidade {
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    width: 65px;
-    height: 65px;
-    z-index: 10;
-}
-
-.acessibilidade img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
 .btn-sair img{
     width: 40px;
     height: 30px;
@@ -30,7 +15,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background: #F8F6F2;
+    background: var(--fundo);
     display: flex;
     justify-content: center;
     padding: 30px 20px;
@@ -40,16 +25,15 @@ main{
     width: 100%;
     max-width: 80%; 
     padding: 20px 10px;
-    background-color: #184D35;
+    background-color: var(--cor-principal);
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 .container{
-    background: white;
+    background: var(--branco);
     padding: 35px;
     border-radius: 20px;
 }
-
 
 
 .logo{
@@ -64,7 +48,7 @@ main{
 }
 
 .logo-link, .logo h2{
-    color: #ffffff;
+    color: var(--branco);
     font-family: 'Imperial Script', cursive;
     font-size: 3rem;
     text-decoration: none;
@@ -72,7 +56,7 @@ main{
 
 h1{
     text-align: center;
-    color: #4D8964;
+    color: var(--cor-principal);
     font-size: 2rem;
     margin-bottom: 25px;
     
@@ -97,17 +81,17 @@ label{
     border-radius: 12px;
     margin-bottom: 18px;
 
-    border: 1px solid #bdbdbd;
+    border: 1px solid var(--cinza);
     border-radius: 20px;
 
-    background: white;
+    background: var(--branco);
 
     padding: 0 20px;
     margin-bottom: 25px;
 }
 
 .input-box i{
-    color: #4D8964;
+    color: var(--cor-principal);
     font-size: 1rem;
 }
 
@@ -126,7 +110,7 @@ label{
 }
 
 .input-box .fa-eye{
-    color: #a8a8a8;
+    color: var(--cinza-claro);
     cursor: pointer;
 }
 
@@ -137,8 +121,8 @@ button{
     border: none;
     border-radius: 12px;
 
-    background: #184D35;
-    color: white;
+    background: var(--cor-principal);
+    color: var(--branco);
 
     font-size: 1rem;
     font-weight: 600;
@@ -155,12 +139,12 @@ button:hover{
     text-align: center;
     margin-top: 25px;
     font-size: 0.9rem;
-    color: #777;
+    color: var(--cinza);
 }
 
 .login a{
     text-decoration: none;
-    color: #4D8964;
+    color: var(--cor-principal);
     font-weight: 600;
 }
 

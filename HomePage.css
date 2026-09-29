@@ -1,141 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Poppins', sans-serif;
-    background: #F8F6F2;
-}
-
-
-.navbar{
-    width: 100%;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 40px;
-
-    background: #377252;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img{
-    width: 50px;
-}
-
-.logo h1{
-    font-family: 'Imperial Script', cursive;
-    font-size: 3rem;
-    color: rgb(255, 255, 255);
-}
-
-.logo-link{
-    text-decoration: none;
-}
-
-.search{
-    width: 40%;
-    position: relative;
-}
-
-.sugestoes-busca{
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    right: 0;
-    z-index: 1200;
-    overflow: hidden;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
-}
-
-.sugestoes-busca[hidden]{
-    display: none;
-}
-
-.sugestoes-busca button{
-    width: 100%;
-    padding: 11px 14px;
-    border: 0;
-    border-bottom: 1px solid #e5ebe6;
-    background: #fff;
-    color: #315d45;
-    text-align: left;
-    cursor: pointer;
-    font: inherit;
-}
-
-.sugestoes-busca button:hover{
-    background: #e7eee9;
-}
-
-.search img{
-    width: 20px;
-    position: absolute;
-    left: 15px;
-    top: 50%;
-
-    transform: translateY(-50%);
-}
-
-.search input{
-    width: 100%;
-
-    padding: 12px 20px 12px 45px;
-
-    border: none;
-    border-radius: 30px;
-
-    background: rgb(236, 241, 235);
-
-    outline: none;
-}
-
-nav{
-    display: flex;
-    gap: 30px;
-}
-
-nav a{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    transition: 0.3s ease;
-    
-}
-
-nav a:hover{
-    text-decoration: underline;
-    
-}
-
-nav img{
-    width: 24px;
-    filter: brightness(0) invert(1);
-}
-
-
 .hero{
-    max-width: 80%;
+    max-width: 1200px;
 
     margin: auto;
     padding: 80px 40px;
@@ -151,31 +17,21 @@ nav img{
     flex: 1;
 }
 
-.tag{
-    display: inline-block;
-
-    padding: 8px 15px;
-    margin-bottom: 20px;
-
-    background: #D9D9D9;
-    border-radius: 20px;
+.texto h3{
+    font-size: 3rem;
+    color: var(--cor-principal);
 }
 
 .texto h2{
     font-size: 4rem;
-    color: #2C3E2D;
-}
-
-.texto h3{
-    font-size: 3rem;
-    color: #377252;
+    color:var(--preto);
 }
 
 .texto p{
     max-width: 500px;
     margin-top: 25px;
 
-    color: #6E6E6E;
+    color:var(--cinza) ;
 }
 
 .botoes{
@@ -194,20 +50,20 @@ nav img{
     transition: 300ms ease;
 }
 .btn-verde{
-    background: #377252;
-    color: white;
+    background:var(--cor-principal);
+    color: var(--fundo);
 }
 .btn-verde:hover{
-    background: #E1E1E1;
-    border-color: #377252;
-    color: #377252;
+    background:var(--cinza-claro);
+    border-color: var(--cor-principal);
+    color: var(--cor-principal);
 }
 
 .btn-cinza{
-    background: #E1E1E1;
+    background: var(--cinza-claro);
 }
 .btn-cinza:hover{
-    border-color: #377252;
+    border-color: var(--cor-principal);
 }
 
 .imagem img{
@@ -215,43 +71,9 @@ nav img{
     border-radius: 15px;
 }
 
-/* ACESSIBILIDADE */
-
-.acessibilidade{
-    position: fixed;
-
-    right: 30px;
-    bottom: 30px;
-
-    width: 65px;
-    height: 65px;
-
-    cursor: pointer;
-}
-
-.acessibilidade img{
-    width: 100%;
-    height: 100%;
-
-    display: block;
-}
-
 /* TABLETS */
 
 @media (max-width: 1024px){
-
-    .navbar{
-        padding: 0 20px;
-    }
-
-    .logo h1{
-        font-size: 2.5rem;
-    }
-
-    .search{
-        width: 35%;
-    }
-
     .hero{
         padding: 60px 20px;
         gap: 30px;
@@ -274,24 +96,6 @@ nav img{
 /* CELULARES */
 
 @media (max-width: 768px){
-
-    .navbar{
-        height: auto;
-
-        flex-direction: column;
-        gap: 15px;
-
-        padding: 20px;
-    }
-
-    .search{
-        width: 100%;
-    }
-
-    nav{
-        gap: 20px;
-    }
-
     .hero{
         width: 100%;
         max-width: 100%;
@@ -322,14 +126,6 @@ nav img{
         width: 100%;
         max-width: 450px;
     }
-
-    .acessibilidade{
-        width: 60px;
-        height: 60px;
-
-        right: 15px;
-        bottom: 15px;
-    }
 }
 
 /* CELULARES PEQUENOS */
@@ -337,10 +133,6 @@ nav img{
 @media (max-width: 480px){
     main{
         max-width: 95%;
-    }
-
-    .logo h1{
-        font-size: 2rem;
     }
 
     .texto h2{
@@ -358,38 +150,5 @@ nav img{
     .btn-verde,
     .btn-cinza{
         width: 100%;
-    }
-
-    nav{
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 360px){
-    .navbar{
-        padding: 16px 12px;
-    }
-
-    .logo h1{
-        font-size: 1.75rem;
-    }
-
-    .hero{
-        width: 100%;
-        padding: 28px 12px 90px;
-    }
-
-    .texto h2{
-        font-size: 1.9rem;
-    }
-
-    .texto h3{
-        font-size: 1.3rem;
-    }
-
-    .botoes button{
-        padding: 11px 16px;
     }
 }

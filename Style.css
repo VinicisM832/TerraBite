@@ -9,10 +9,10 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background: #F8F6F2;
+    background: var(--fundo);
 }
 
-
+/*header*/
 .navbar{
     width: 100%;
     height: 90px;
@@ -24,7 +24,7 @@ body{
 
     padding: 0 40px;
 
-    background: #377252;
+    background: var(--cor-principal);
 }
 
 .logo{
@@ -40,7 +40,7 @@ body{
 .logo h1{
     font-family: 'Imperial Script', cursive;
     font-size: 3rem;
-    color: rgb(255, 255, 255);
+    color:var(--fundo);
 }
 
 .logo-link{
@@ -69,7 +69,7 @@ body{
     border: none;
     border-radius: 30px;
 
-    background: rgb(236, 241, 235);
+    background: var(--fundo);
 
     outline: none;
 }
@@ -85,8 +85,13 @@ nav a{
     gap: 8px;
 
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color:var(--fundo);
     font-weight: 500;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    
 }
 
 nav img{
@@ -94,84 +99,6 @@ nav img{
 }
 
 
-.hero{
-    max-width: 1200px;
-
-    margin: auto;
-    padding: 80px 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 50px;
-}
-
-.texto{
-    flex: 1;
-}
-
-.tag{
-    display: inline-block;
-
-    padding: 8px 15px;
-    margin-bottom: 20px;
-
-    background: #D9D9D9;
-    border-radius: 20px;
-}
-
-.texto h2{
-    font-size: 4rem;
-    color: #2C3E2D;
-}
-
-.texto h3{
-    font-size: 3rem;
-    color: #377252;
-}
-
-.texto p{
-    max-width: 500px;
-    margin-top: 25px;
-
-    color: #6E6E6E;
-}
-
-.botoes{
-    display: flex;
-    gap: 15px;
-
-    margin-top: 30px;
-}
-
-.btn-verde{
-    padding: 12px 25px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: #377252;
-    color: white;
-
-    cursor: pointer;
-}
-
-.btn-cinza{
-    padding: 12px 25px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: #E1E1E1;
-
-    cursor: pointer;
-}
-
-.imagem img{
-    width: 500px;
-    border-radius: 15px;
-}
 
 /* ACESSIBILIDADE */
 
@@ -209,24 +136,6 @@ nav img{
     .search{
         width: 35%;
     }
-
-    .hero{
-        padding: 60px 20px;
-        gap: 30px;
-    }
-
-    .texto h2{
-        font-size: 3rem;
-    }
-
-    .texto h3{
-        font-size: 2.5rem;
-    }
-
-    .imagem img{
-        width: 400px;
-        max-width: 100%;
-    }
 }
 
 /* CELULARES */
@@ -250,35 +159,6 @@ nav img{
         gap: 20px;
     }
 
-    .hero{
-        flex-direction: column;
-        text-align: center;
-
-        padding: 40px 20px;
-    }
-
-    .texto p{
-        max-width: 100%;
-    }
-
-    .botoes{
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .texto h2{
-        font-size: 2.8rem;
-    }
-
-    .texto h3{
-        font-size: 2rem;
-    }
-
-    .imagem img{
-        width: 100%;
-        max-width: 450px;
-    }
-
     .acessibilidade{
         width: 60px;
         height: 60px;
@@ -295,20 +175,6 @@ nav img{
     .logo h1{
         font-size: 2rem;
     }
-
-    .texto h2{
-        font-size: 2.2rem;
-    }
-
-    .texto h3{
-        font-size: 1.5rem;
-    }
-
-    .texto p{
-        font-size: 0.95rem;
-    }
-
-
 
     nav{
         flex-direction: row;

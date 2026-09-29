@@ -1,20 +1,7 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: "Montserrat", Arial, sans-serif;
-    background-color: #f7f8f2;
-    color: #111;
+    color: var(--preto);
 }
-
-nav img{
-    width: 24px;
-    filter: brightness(0) invert(1);
-}
-
 /* =========================
    CONTAINER PRINCIPAL
 ========================= */
@@ -55,15 +42,15 @@ main {
 }
 
 .card-vermelho {
-    background-color: #f8eae6;
+    background-color:var(--vermelho-claro) ;
 }
 
 .card-cinza {
-    background-color: #eef0eb;
+    background-color: var(--fundo);
 }
 
 .card-verde {
-    background-color: #eaf2e4;
+    background-color:var(--verde-claro);
 }
 
 
@@ -87,18 +74,18 @@ main {
 }
 
 .card-vermelho .icone {
-    background-color: #f7dcd6;
-    color: #df6659;
+    background-color:color-mix(in srgb, var(--vermelho) 20%, transparent );
+    color: var(--vermelho);
 }
 
 .card-cinza .icone {
-    background-color: #dce7dc;
-    color: #397758;
+    background-color:color-mix(in srgb, var(--verde) 20%, transparent );
+    color:var(--preto) ;
 }
 
 .card-verde .icone {
-    background-color: #dcebd2;
-    color: #72ad62;
+    background-color:color-mix(in srgb, var(--verde) 20%, transparent );
+    color:var(--verde) ;
 }
 
 
@@ -116,7 +103,7 @@ main {
     max-width: 280px;
     font-size: 13px;
     line-height: 1.5;
-    color: #555;
+    color: var(--cinza);
 }
 
 
@@ -125,7 +112,7 @@ main {
 ========================= */
 
 .impacto {
-    background-color: white;
+    background-color:var(--branco);
     border-radius: 15px;
 
     padding: 55px;
@@ -179,7 +166,7 @@ main {
 }
 
 .subtitulo {
-    color: #7a9b7e;
+    color: var(--verde);
 
     font-size: 16px;
     line-height: 1.5;
@@ -195,7 +182,7 @@ main {
 }
 
 .conteudo h3 {
-    color: #006b2d;
+    color: var(--cor-principal);
 
     font-size: 18px;
 

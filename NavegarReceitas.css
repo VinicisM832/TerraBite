@@ -1,105 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Poppins', sans-serif;
-    background: #F8F6F2;
-}
-
-
-.navbar{
-    width: 100%;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 40px;
-
-    background: #377252;
-}
-
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img{
-    width: 50px;
-}
-
-.logo h1{
-    font-family: 'Imperial Script', cursive;
-    font-size: 3rem;
-    color: rgb(255, 255, 255);
-}
-
-.logo-link{
-    text-decoration: none;
-}
-
-.search{
-    width: 40%;
-    position: relative;
-}
-
-.search img{
-    width: 20px;
-    position: absolute;
-    left: 15px;
-    top: 50%;
-
-    transform: translateY(-50%);
-}
-
-.search input{
-    width: 100%;
-
-    padding: 12px 20px 12px 45px;
-
-    border: none;
-    border-radius: 30px;
-
-    background: rgb(236, 241, 235);
-
-    outline: none;
-}
-
-nav{
-    display: flex;
-    gap: 30px;
-}
-
-nav a{
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-weight: 500;
-    transition: 0.3s ease;
-    
-}
-nav a:hover{
-    text-decoration: underline;
-    
-}
-
-nav img{
-    width: 24px;
-    filter: brightness(0) invert(1);
-}
-
 /*corpo*/
 main{
     width: min(1180px, calc(100% - 48px));
@@ -126,7 +26,7 @@ main{
 
 .receitas h2{
     font-size: 32px;
-    color: #2c4d3d;
+    color: var(--cor-principal);
     margin-bottom: 30px;
 }
 
@@ -136,7 +36,7 @@ main{
     gap: 20px;
 }
 .card-receita{
-    background: white;
+    background: var(--branco);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
@@ -160,12 +60,12 @@ main{
     font-size: 20px;
     min-height: 70px;
     margin-bottom: 10px;
-    color: #222;
+    color: var(--preto);
 }
 
 .descricao{
     font-size: 14px;
-    color: #777;
+    color: var(--cinza);
     line-height: 1.5;
     margin-bottom: 15px;
 }
@@ -179,8 +79,8 @@ main{
 }
 
 .tags span{
-    background: #eef4ed;
-    color: #4f6e5c;
+    background: color-mix(in srgb, var(--verde) 20%, transparent);
+    color: var(--verde);
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 12px;
@@ -191,7 +91,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--cinza);
     padding-top: 12px;
 }
 
@@ -208,11 +108,11 @@ main{
 
 .info span{
     font-size: 13px;
-    color: #333;
+    color: var(--preto);
 }
 
 .card-receita{
-    background: white;
+    background: var(--branco);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
@@ -238,7 +138,7 @@ main{
 }
 
 .card-receita.receita-visitada {
-    border: 3px solid #377252;
+    border: 3px solid var(--cor-principal);
     position: relative;
 }
 
@@ -249,30 +149,10 @@ main{
     right: 12px;
     padding: 5px 10px;
     border-radius: 15px;
-    background: #377252;
-    color: white;
+    background: var(--cor-principal);
+    color: var(--branco);
     font-size: 12px;
     font-weight: 600;
-}
-
-/* ACESSIBILIDADE */
-.acessibilidade{
-    position: fixed;
-
-    right: 30px;
-    bottom: 30px;
-
-    width: 65px;
-    height: 65px;
-
-    cursor: pointer;
-}
-
-.acessibilidade img{
-    width: 100%;
-    height: 100%;
-
-    display: block;
 }
 
 @media (max-width: 1100px){
