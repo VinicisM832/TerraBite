@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acessibilidade | Terra Bite</title>
+
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="acessibilidade.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="HomePage.html" class="logo-link">
+            <div class="logo">
+                <img src="icons/ICONE (1).png" alt="Logo Terra Bite">
+                <h1>Terra Bite</h1>
+            </div>
+        </a>
+
+
+        <div class="search">
+            <img src="icons/Vector.png" alt="Pesquisar">
+
+            <input type="text" placeholder="Ex: Casca de batata, Talos, Bananas..." aria-label="Pesquisar receitas">
+        </div>
+
+        <nav>
+
+            <a href="Educacao.html">
+                <img src="icons/icone educaçao.png" alt="">
+                Educação
+            </a>
+
+
+            <a href="Cadastro.html">
+                <img src="icons/icone perfil.png" alt="">
+                Perfil
+            </a>
+        </nav>
+    </header>
+
+
+    <main class="pagina-acessibilidade">
+
+        <!-- CABEÇALHO -->
+        <section class="introducao">
+
+            <span class="subtitulo">
+                PERSONALIZAÇÃO
+            </span>
+
+            <h2>Acessibilidade</h2>
+
+            <p>
+                Personalize sua experiência no Terra Bite
+                de acordo com suas necessidades.
+            </p>
+        </section>
+
+
+        <!-- AVISO -->
+
+        <div class="aviso">
+
+            <span class="aviso-icone">
+                ✓
+            </span>
+
+            <p>
+                As configurações são aplicadas automaticamente
+                e podem ser alteradas a qualquer momento.
+            </p>
+        </div>
+
+
+        <!-- CONFIGURAÇÕES -->
+
+        <section class="configuracoes">
+
+            <div class="card configuracao">
+
+                <div class="icone-card">
+                    ◐
+                </div>
+
+                <div class="informacao">
+
+                    <h3>Modo escuro</h3>
+
+                    <p>
+                        Alterne entre uma aparência clara
+                        ou escura para navegar pelo site.
+                    </p>
+                </div>
+
+                <button
+                    id="botaoTema"
+                    class="switch"
+                    aria-label="Ativar modo escuro"
+                    aria-pressed="false"
+                >
+
+                    <span id="iconeTema">
+                        ☀
+                    </span>
+                </button>
+            </div>
+
+
+            <div class="card configuracao">
+
+                <div class="icone-card">
+                    T
+                </div>
+
+                <div class="informacao">
+
+                    <h3>Tamanho da fonte</h3>
+
+                    <p>
+                        Ajuste o tamanho dos textos
+                        para facilitar a leitura.
+                    </p>
+                </div>
+
+                <div class="botoes-fonte">
+
+                    <button id="diminuirFonte">
+                        A−
+                    </button>
+
+                    <button id="fonteNormal">
+
+                        <strong>A</strong>
+
+                        <span>
+                            Normal
+                        </span>
+
+                    </button>
+
+                    <button id="aumentarFonte">
+                        A+
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- RECURSOS -->
+
+        <section class="secao">
+
+            <div class="titulo-secao">
+
+                <span class="subtitulo">
+                    RECURSOS
+                </span>
+
+                <h2>
+                    Recursos de acessibilidade
+                </h2>
+
+                <p>
+                    Escolha os recursos que deseja utilizar
+                    durante sua navegação.
+                </p>
+            </div>
+
+
+            <div class="opcoes">
+
+                <button
+                    id="leituraVoz"
+                    class="card-opcao"
+                >
+
+                    <div class="icone-opcao">
+                        🔊
+                    </div>
+
+                    <h3>
+                        Leitura em voz
+                    </h3>
+
+                    <p>
+                        Ouça o conteúdo da página
+                        sendo narrado.
+                    </p>
+
+                    <span class="seta">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="leituraImagens"
+                    class="card-opcao"
+                >
+
+                    <div class="icone-opcao">
+                        ◉
+                    </div>
+
+                    <h3>
+                        Leitura de imagens
+                    </h3>
+
+                    <p>
+                        Ouça descrições das imagens
+                        presentes no site.
+                    </p>
+
+                    <span class="seta">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="abrirDaltonismo"
+                    class="card-opcao"
+                >
+
+                    <div class="icone-opcao">
+                        ◈
+                    </div>
+
+                    <h3>
+                        Modos de daltonismo
+                    </h3>
+
+                    <p>
+                        Escolha uma adaptação de cores
+                        para sua visualização.
+                    </p>
+
+                    <span class="seta">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DALTONISMO -->
+
+        <section class="secao daltonismo">
+
+            <div class="titulo-secao">
+
+                <span class="subtitulo">
+                    CORES
+                </span>
+
+                <h2>
+                    Modos de daltonismo
+                </h2>
+
+                <p>
+                    Selecione uma adaptação de cores
+                    para melhorar a visualização dos elementos.
+                </p>
+
+            </div>
+
+
+            <div class="lista-modos">
+
+
+                <button
+                    class="modo-cor"
+                    data-modo="protanopia"
+                >
+
+                    <div class="texto-cor">
+
+                        <h3> Protanopia</h3>
+
+                        <p>Adaptação para vermelho-verde
+                        </p>
+                    </div>
+
+                    <div class="cores">
+                        <span class="cor protanopia-1"></span>
+                        <span class="cor protanopia-2"></span>
+                        <span class="cor protanopia-3"></span>
+                    </div>
+
+                    <span class="seta">
+                        →
+                    </span>
+                </button>
+
+                <button
+                    class="modo-cor"
+                    data-modo="deuteranopia"
+                >
+                    <div class="texto-cor">
+
+                        <h3>
+                            Deuteranopia
+                        </h3>
+
+                        <p>
+                            Adaptação para verde-vermelho
+                        </p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor deuteranopia-1"></span>
+
+                        <span class="cor deuteranopia-2"></span>
+
+                        <span class="cor deuteranopia-3"></span>
+
+                    </div>
+
+
+                    <span class="seta">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="modo-cor"
+                    data-modo="tritanopia"
+                >
+
+                    <div class="texto-cor">
+
+                        <h3>
+                            Tritanopia
+                        </h3>
+
+                        <p>
+                            Adaptação para azul-amarelo
+                        </p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor tritanopia-1"></span>
+
+                        <span class="cor tritanopia-2"></span>
+
+                        <span class="cor tritanopia-3"></span>
+
+                    </div>
+
+
+                    <span class="seta">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="modo-cor"
+                    data-modo="normal"
+                >
+
+                    <div class="texto-cor">
+
+                        <h3>
+                            Visão padrão
+                        </h3>
+
+                        <p>
+                            Manter as cores originais do site
+                        </p>
+
+                    </div>
+
+
+                    <div class="cores">
+
+                        <span class="cor padrao-1"></span>
+
+                        <span class="cor padrao-2"></span>
+
+                        <span class="cor padrao-3"></span>
+
+                    </div>
+
+
+                    <span class="seta">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+<script src="acessibilidade.js"> </script>
+</body>
+</html>

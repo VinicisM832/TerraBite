@@ -1,0 +1,824 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PÁGINA
+========================= */
+
+.pagina-acessibilidade {
+
+    width: 100%;
+    min-height: calc(100vh - 80px);
+
+    padding: 75px 8% 100px;
+
+    background: var(--fundo);
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+   INTRODUÇÃO
+========================= */
+
+.introducao {
+
+    margin-bottom: 35px;
+}
+
+
+.subtitulo {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--cor-principal);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.introducao h2 {
+
+    margin: 0;
+
+    color: var(--preto);
+
+    font-size: 3.5rem;
+
+    font-weight: 700;
+}
+
+
+.introducao p {
+
+    max-width: 600px;
+
+    margin: 10px 0 0;
+
+    color: var(--cinza);
+
+    font-size: 1rem;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.aviso {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 17px 20px;
+
+    margin-bottom: 35px;
+
+    border: 1px solid var(--verde-claro);
+
+    border-radius: 15px;
+
+    background: var(--verde-claro);
+}
+
+
+.aviso-icone {
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--cor-principal);
+
+    color: var(--branco);
+
+    font-size: 0.8rem;
+}
+
+
+.aviso p {
+
+    margin: 0;
+
+    color: var(--cinza);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+.configuracoes {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    border: 1px solid var(--verde-claro);
+
+    border-radius: 20px;
+
+    background: var(--branco);
+
+    transition: 0.25s ease;
+}
+
+
+.card:hover {
+
+    border-color: var(--verde-claro);
+
+    box-shadow:
+        0 10px 30px rgba(40, 60, 40, 0.06);
+
+    transform: translateY(-3px);
+}
+
+
+.icone-card {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: var(--verde-claro);
+
+    color: var(--cor-principal);
+
+    font-size: 1.4rem;
+
+    font-weight: 600;
+}
+
+
+.informacao {
+
+    flex: 1;
+}
+
+
+.informacao h3 {
+
+    margin: 0 0 5px;
+
+    color: var(--preto);
+
+    font-size: 1rem;
+}
+
+
+.informacao p {
+
+    margin: 0;
+
+    color: var(--cinza);
+
+    font-size: 0.76rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch {
+
+    width: 60px;
+    height: 33px;
+
+    padding: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: var(--verde-claro);
+
+    cursor: pointer;
+}
+
+
+.switch span {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--branco);
+
+    font-size: 0.75rem;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   BOTÕES DE FONTE
+========================= */
+
+.botoes-fonte {
+
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.botoes-fonte button {
+
+    height: 38px;
+
+    padding: 0 11px;
+
+    border: 1px solid var(--verde-claro);
+
+    border-radius: 9px;
+
+    background: var(--fundo);
+
+    color: var(--cinza);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.botoes-fonte button:hover {
+
+    border-color: var(--cor-principal);
+
+    color: var(--cor-principal);
+
+    background: var(--fundo);
+}
+
+
+#fonteNormal {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+#fonteNormal span {
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao {
+
+    margin-top: 70px;
+}
+
+
+.titulo-secao {
+
+    margin-bottom: 25px;
+}
+
+
+.titulo-secao h2 {
+
+    margin: 0;
+
+    color: var(--preto);
+
+    font-size: 1.8rem;
+}
+
+
+.titulo-secao p {
+
+    margin: 6px 0 0;
+
+    color: var(--cinza);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================
+   RECURSOS
+========================= */
+
+.opcoes {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.card-opcao {
+
+    position: relative;
+
+    min-height: 210px;
+
+    padding: 25px;
+
+    border: 1px solid var(--verde-claro);
+
+    border-radius: 20px;
+
+    background: var(--branco);
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.card-opcao:hover {
+
+    border-color: var(--verde-claro);
+
+    box-shadow:
+        0 12px 30px rgba(40, 60, 40, 0.07);
+
+    transform: translateY(-4px);
+}
+
+
+.icone-opcao {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 14px;
+
+    background: var(--verde-claro);
+
+    font-size: 1.2rem;
+}
+
+
+.card-opcao h3 {
+
+    margin: 0 0 7px;
+
+    color: var(--cinza);
+
+    font-size: 1rem;
+}
+
+
+.card-opcao p {
+
+    max-width: 240px;
+
+    margin: 0;
+
+    color:var(--cinza);
+
+    font-size: 0.76rem;
+
+    line-height: 1.6;
+}
+
+
+.card-opcao .seta {
+
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    color: var(--cinza);
+
+    font-size: 1.1rem;
+
+    transition: 0.2s ease;
+}
+
+
+.card-opcao:hover .seta {
+
+    color: var(--cor-principal);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   DALTONISMO
+========================= */
+
+.daltonismo {
+
+    padding-bottom: 20px;
+}
+
+
+.lista-modos {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.modo-cor {
+
+    position: relative;
+
+    min-height: 110px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    border: 1px solid var(--fundo);
+
+    border-radius: 18px;
+
+    background: var(--branco);
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.modo-cor:hover {
+
+    border-color: var(--verde-claro);
+
+    background: var(--fundo);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(40, 60, 40, 0.05);
+}
+
+
+.texto-cor {
+
+    flex: 1;
+}
+
+
+.texto-cor h3 {
+
+    margin: 0 0 5px;
+
+    color: var(--preto);
+
+    font-size: 0.95rem;
+}
+
+
+.texto-cor p {
+
+    margin: 0;
+
+    color: var(--cinza);
+
+    font-size: 0.72rem;
+}
+
+
+.cores {
+
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.cor {
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.modo-cor .seta {
+
+    color: var(--cinza);
+
+    font-size: 1rem;
+
+    transition: 0.2s ease;
+}
+
+
+.modo-cor:hover .seta {
+
+    color: var(--cor-principal);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   CORES
+========================= */
+
+.protanopia-1 {
+    background: #6d6b39;
+}
+
+.protanopia-2 {
+    background: #3f72a5;
+}
+
+.protanopia-3 {
+    background: #d5b84b;
+}
+
+
+.deuteranopia-1 {
+    background: #706f39;
+}
+
+.deuteranopia-2 {
+    background: #4d6fa3;
+}
+
+.deuteranopia-3 {
+    background: #c7b53f;
+}
+
+
+.tritanopia-1 {
+    background: #d64f52;
+}
+
+.tritanopia-2 {
+    background: #4c79a8;
+}
+
+.tritanopia-3 {
+    background: #767676;
+}
+
+
+.padrao-1 {
+    background: var(--cor-principal);
+}
+
+.padrao-2 {
+    background: #f0c64b;
+}
+
+.padrao-3 {
+    background: #e9eee6;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .pagina-acessibilidade {
+
+        padding: 60px 5% 80px;
+    }
+
+
+    .configuracoes {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .opcoes {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .lista-modos {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .pagina-acessibilidade {
+
+        padding: 45px 20px 60px;
+    }
+
+
+    .introducao h2 {
+
+        font-size: 2.3rem;
+    }
+
+
+    .introducao p {
+
+        font-size: 0.85rem;
+    }
+
+
+    .card {
+
+        flex-wrap: wrap;
+
+        padding: 20px;
+    }
+
+
+    .botoes-fonte {
+
+        width: 100%;
+
+        justify-content: flex-end;
+    }
+
+
+    .card-opcao {
+
+        min-height: 150px;
+
+        padding: 20px;
+    }
+
+
+    .modo-cor {
+
+        flex-wrap: wrap;
+
+        padding: 20px;
+    }
+
+
+    .cores {
+
+        margin-left: auto;
+    }
+
+}
+
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 400px) {
+
+    .pagina-acessibilidade {
+
+        padding: 35px 15px 50px;
+    }
+
+
+    .introducao h2 {
+
+        font-size: 2rem;
+    }
+
+
+    .aviso {
+
+        align-items: flex-start;
+    }
+
+
+    .card {
+
+        gap: 13px;
+    }
+
+
+    .botoes-fonte {
+
+        justify-content: stretch;
+    }
+
+
+    .botoes-fonte button {
+
+        flex: 1;
+    }
+
+
+    .modo-cor {
+
+        align-items: flex-start;
+    }
+
+
+    .cores {
+
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+}

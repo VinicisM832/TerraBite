@@ -11,3 +11,99 @@
     --verde-claro:#eaf2e4;
 
 }
+
+[data-tema="protanopia"] {
+    --cor-principal: #2878A8;
+    --fundo: #F7F8F2;
+    --preto: #263238;
+    --branco: #FFFFFF;
+
+    --cinza: #606060;
+    --cinza-claro: #E2E2E2;
+
+    --vermelho: #D9822B;
+    --vermelho-claro: #F9E8D2;
+
+    --verde: #2878A8;
+    --verde-claro: #DCECF5;
+}
+
+[data-tema="deuteranopia"] {
+    --cor-principal: #326B9C;
+    --fundo: #F7F8F2;
+    --preto: #263238;
+    --branco: #FFFFFF;
+
+    --cinza: #606060;
+    --cinza-claro: #E2E2E2;
+
+    --vermelho: #D97728;
+    --vermelho-claro: #F9E8D2;
+
+    --verde: #326B9C;
+    --verde-claro: #DDEAF4;
+}
+
+[data-tema="tritanopia"] {
+    --cor-principal: #397758;
+    --fundo: #F7F8F2;
+    --preto: #2C3E2D;
+    --branco: #FFFFFF;
+
+    --cinza: #626262;
+    --cinza-claro: #E1E1E1;
+
+    --vermelho: #C94C4C;
+    --vermelho-claro: #F5DDDD;
+
+    --verde: #397758;
+    --verde-claro: #DCEBDD;
+}
+
+[data-tema="acromatopsia"] {
+    --cor-principal: #333333;
+    --fundo: #F5F5F5;
+    --preto: #111111;
+    --branco: #FFFFFF;
+
+    --cinza: #555555;
+    --cinza-claro: #D9D9D9;
+
+    --vermelho: #222222;
+    --vermelho-claro: #E8E8E8;
+
+    --verde: #444444;
+    --verde-claro: #D0D0D0;
+}
+
+[data-tema="alto-contraste"] {
+    --cor-principal: #005FCC;
+    --fundo: #FFFFFF;
+    --preto: #000000;
+    --branco: #FFFFFF;
+
+    --cinza: #333333;
+    --cinza-claro: #D9D9D9;
+
+    --vermelho: #B00020;
+    --vermelho-claro: #FFE5E5;
+
+    --verde: #006B3C;
+    --verde-claro: #DFF5E8;
+}
+
+[data-tema="noturno"] {
+    --cor-principal: #5FAF82;
+    --fundo: #121614;
+    --preto: #E8F0EA;
+    --branco: #121614;
+
+    --cinza: #B7C0BA;
+    --cinza-claro: #28302B;
+
+    --vermelho: #FF8175;
+    --vermelho-claro: #3A2522;
+
+    --verde: #6FC08F;
+    --verde-claro: #25372C;
+}
