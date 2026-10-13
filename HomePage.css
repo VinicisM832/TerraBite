@@ -152,3 +152,189 @@
         width: 100%;
     }
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--fundo);
+}
+
+/*header*/
+.navbar{
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: var(--cor-principal);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    width: 50px;
+}
+
+.logo h1{
+    font-family: 'Imperial Script', cursive;
+    font-size: 3rem;
+    color:var(--fundo);
+}
+
+.logo-link{
+    text-decoration: none;
+}
+
+.search{
+    width: 40%;
+    position: relative;
+}
+
+.search img{
+    width: 20px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.search input{
+    width: 100%;
+
+    padding: 12px 20px 12px 45px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--fundo);
+
+    outline: none;
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+}
+
+nav a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color:var(--fundo);
+    font-weight: 500;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    
+}
+
+nav img{
+    width: 24px;
+}
+
+
+
+/* ACESSIBILIDADE */
+
+.acessibilidade{
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 65px;
+    height: 65px;
+
+    cursor: pointer;
+}
+
+.acessibilidade img{
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+/* TABLETS */
+
+@media (max-width: 1024px){
+
+    .navbar{
+        padding: 0 20px;
+    }
+
+    .logo h1{
+        font-size: 2.5rem;
+    }
+
+    .search{
+        width: 35%;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 768px){
+
+    .navbar{
+        height: auto;
+
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .search{
+        width: 100%;
+    }
+
+    nav{
+        gap: 20px;
+    }
+
+    .acessibilidade{
+        width: 60px;
+        height: 60px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 480px){
+
+    .logo h1{
+        font-size: 2rem;
+    }
+
+    nav{
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+}
