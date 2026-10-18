@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.areapopup{
+    position: absolute;
+    margin: auto;
+}
+.overlaypopup {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.overlaypopup.ativo {
+    display: flex;
+}
+
+.popup{
+    height:50vh ;
+    width: 25vw ;
+    background-color: var(--fundo) ;
+    padding: 20px 20px;
+    border: 2px solid var(--cor-principal) ;
+    border-radius:8px ;
+    overflow-y: scroll;
+}
+
+.comandos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icone{
+/*definir tamanho dos icones e a cor*/ 
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    color: none;
+    cursor: pointer;
+}
+
+.icone > img {
+    width: 20px;
+    height: 20px;
+}
+
+#voltar{
+
+}
+
+#fechar{
+
+}
+
+.titulo{
+    text-align: center;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.caixa{
+    background-color: var();
+    border: 2px solid var(--verde-claro);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    justify-content: ;
+    gap: 20px;
+}
+
+.caixa:hover{
+    background-color: var(--verde-claro);
+}
+
+.caixa:active{
+    background-color:var(--cor-principal) ;
+}
+
+.caixamenor{
+    display: flex;
+    gap: 5px;
+}
+
+.caixamenor > button{
+    width:;
+    height: ;
+    padding: 5px ;
+    background-color: var();
+}
+
+section > div:nth-child(1) {
+    justify-content: space-between;
+    grid-column:span 2;
+}
+section > div:nth-child(6) {
+    justify-content: center;
+    grid-column:span 2;
+}
+
+section > h3{
+    grid-column: span 2;
+}
+
+.secao[hidden]{
+    display: none;
+}
+
+.modo-cor{
+    
+}
