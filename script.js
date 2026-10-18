@@ -150,7 +150,7 @@ if (formulario) {
 
         // Vai para a Home depois de 3 segundos
         setTimeout(function () {
-            window.location.href = "HomePage.html";
+            window.location.href = "index.html";
         }, 3000);
     }
 }
