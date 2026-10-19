@@ -92,7 +92,7 @@
     --verde-claro: #DFF5E8;
 }
 
-[data-tema="noturno"] {
+:root[data-aparencia="noturno"] {
     --cor-principal: #5FAF82;
     --fundo: #121614;
     --preto: #E8F0EA;

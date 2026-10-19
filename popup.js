@@ -1,86 +1,136 @@
 const areapopup = document.getElementById("areapopup");
+const abrir = document.getElementById("abrirpopup");
 
-// Carregar o HTML externo
-fetch("popup.html")
-    .then(resposta => {
-        if (!resposta.ok) {
-            throw new Error("Não foi possível carregar o Popup");
-        }
+// Verificar se os elementos principais existem
+if (!areapopup || !abrir) {
+    console.error("Não encontrei #areapopup ou #abrirpopup.");
+} else {
 
-        return resposta.text();
-    })
+    // Carregar o HTML externo
+    fetch("popup.html")
+        .then(resposta => {
+            if (!resposta.ok) {
+                throw new Error(
+                    "Não foi possível carregar popup.html"
+                );
+            }
 
-    .then(html => {
-        areapopup.innerHTML = `
-            <div class="overlaypopup">
-                ${html}
-            </div>
-        `;
+            return resposta.text();
+        })
 
-        configurarpopup();
-    })
+        .then(html => {
+            areapopup.innerHTML = `
+                <div class="overlaypopup">
+                    ${html}
+                </div>
+            `;
 
-    .catch(erro => {
-        console.log(erro);
-    });
+            configurarpopup();
+        })
+
+        .catch(erro => {
+            console.error("Erro ao carregar o popup:", erro);
+        });
+}
 
 
 function configurarpopup() {
+
     const overlay = areapopup.querySelector(".overlaypopup");
-    const abrir = document.getElementById("abrirpopup");
-    const fechar = areapopup.querySelector("#fechar");
-    const voltar = areapopup.querySelector("#voltar");
+    const fechar = overlay.querySelector("#fechar");
+    const voltar = overlay.querySelector("#voltar");
+    const titulo = overlay.querySelector(".titulo");
 
-    const secoes = areapopup.querySelectorAll("[data-conteudo]");
+    const secoes = overlay.querySelectorAll("[data-conteudo]");
 
-    // Mostrar uma seção específica
+    // Verificar os elementos do popup
+    if (!overlay || !fechar || !voltar || !titulo) {
+        console.error("Faltam elementos necessários no popup.");
+        return;
+    }
+
+    // Mostrar a seção selecionada
     function mostrarSecao(nome) {
+
+        const existe = [...secoes].some(secao => {
+            return secao.dataset.conteudo === nome;
+        });
+
+        if (!existe) {
+            console.error("Seção não encontrada:", nome);
+            return;
+        }
+
         secoes.forEach(secao => {
             secao.hidden = secao.dataset.conteudo !== nome;
         });
+
+        // Mostrar Voltar apenas nas telas secundárias
+        voltar.hidden = nome === "acessibilidade";
+
+        // Atualizar o título
+        titulo.textContent = nome === "daltonismo"
+            ? "Modos de daltonismo"
+            : "Acessibilidade";
     }
 
-    // Abrir o popup sempre na tela principal
+
+    // Abrir o popup
     abrir.addEventListener("click", () => {
         mostrarSecao("acessibilidade");
         overlay.classList.add("ativo");
     });
 
-    // Trocar de seção dentro do popup
+
+    // Trocar de seção
     const botoes = overlay.querySelectorAll("[data-abre-conteudo]");
 
     botoes.forEach(botao => {
+
         botao.addEventListener("click", () => {
             const nome = botao.dataset.abreConteudo;
 
             mostrarSecao(nome);
         });
+
     });
+
 
     // Voltar para a tela principal
     voltar.addEventListener("click", () => {
         mostrarSecao("acessibilidade");
     });
 
+
     // Fechar o popup
-    function fecharpopup() {
+    function fecharPopup() {
         overlay.classList.remove("ativo");
         mostrarSecao("acessibilidade");
     }
 
-    fechar.addEventListener("click", fecharpopup);
+    fechar.addEventListener("click", fecharPopup);
 
-    // Fechar clicando fora
+
+    // Fechar ao clicar fora da janela
     overlay.addEventListener("click", evento => {
+
         if (evento.target === overlay) {
-            fecharpopup();
+            fecharPopup();
         }
+
     });
+
 
     // Fechar com ESC
     document.addEventListener("keydown", evento => {
-        if (evento.key === "Escape") {
-            fecharpopup();
+
+        if (
+            evento.key === "Escape" &&
+            overlay.classList.contains("ativo")
+        ) {
+            fecharPopup();
         }
+
     });
+
 }
