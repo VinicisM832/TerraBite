@@ -91,7 +91,7 @@
     display: none !important;
 }
 
-.popup .secao[data-conteudo="acessibilidade"] > .caixa:first-child {
+.popup .secao[data-conteudo="acessibilidade"] > .caixa:nth-child(1) {
     grid-column: 1 / -1;
 }
 
