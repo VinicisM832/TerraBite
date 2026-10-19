@@ -1,4 +1,3 @@
-/*DALTONISMO*/
 const modocor = document.querySelectorAll(".modo-cor");
 
 // Recupera o tema salvo
