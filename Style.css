@@ -103,9 +103,9 @@ nav img{
 /* ACESSIBILIDADE */
 
 .acessibilidade{
-    background-color: none;
+    background-color: transparent;
     border: none;
-    color: none;
+    color: transparent;
 
     position: fixed;
 
