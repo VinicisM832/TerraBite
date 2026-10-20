@@ -91,11 +91,11 @@
     display: none !important;
 }
 
-.popup .secao[data-conteudo="acessibilidade"] > .caixa:nth-child(1),.caixa:nth-child(2),.caixa:nth-child(3) {
+.popup #acessibilidade[data-conteudo="acessibilidade"] > .caixa:nth-child(1), #acessibilidade > .caixa:nth-child(2), #acessibilidade> .caixa:nth-child(3) {
     display: none;
 }
 
-.popup .secao[data-conteudo="daltonismo"] > h3 {
+.popup #daltonismo[data-conteudo="daltonismo"] > h3 {
     grid-column: 1 / -1;
 }
 
