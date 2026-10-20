@@ -103,6 +103,10 @@ nav img{
 /* ACESSIBILIDADE */
 
 .acessibilidade{
+    background-color: none;
+    border: none;
+    color: none;
+
     position: fixed;
 
     right: 30px;
