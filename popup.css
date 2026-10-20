@@ -91,8 +91,8 @@
     display: none !important;
 }
 
-.popup .secao[data-conteudo="acessibilidade"] > .caixa:nth-child(1) {
-    grid-column: 1 / -1;
+.popup .secao[data-conteudo="acessibilidade"] > .caixa:nth-child(1),.caixa:nth-child(2),.caixa:nth-child(3) {
+    display: none;
 }
 
 .popup .secao[data-conteudo="daltonismo"] > h3 {
