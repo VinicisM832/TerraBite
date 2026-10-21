@@ -63,8 +63,10 @@
     justify-content: center;
 
     border: none;
-    background: transparent;
+    background-color: var(--preto);
     cursor: pointer;
+    mask-size: contain;
+    mask-repeat: no-repeat;
 }
 
 .icone img {
@@ -161,4 +163,26 @@ button.caixa.ativo {
     .popup .secao[data-conteudo="daltonismo"] > h3 {
         grid-column: 1;
     }
+}
+
+/*ICONES*/
+
+#escuro{
+    mask-image: url("icons/lua.png") ;
+}
+
+#claro{
+    mask-image: url("icons/sol.png");
+}
+
+#voltar{
+    mask-image: url("icons/voltar.png");
+}
+
+#fechar{
+    mask-image: url("icons/fechar.png");
+}
+
+#daltonico{
+    mask-image: url("icons/olho.png");
 }
