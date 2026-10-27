@@ -186,3 +186,50 @@ nav img{
         gap: 10px;
     }
 }
+
+
+/*ICONES*/
+.icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background-color: var(--preto);
+    cursor: pointer;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+}
+/*ICONES GRANDES*/
+.iconegrande{
+
+}
+/*ICONES MÉDIOS*/
+.iconemedio{
+
+}
+/*ICONES PEQUENOS*/
+.iconepequeno{
+    width: 24px;
+    height: 24px;
+
+}
+
+/*icones*/ 
+#lupa{
+    mask-image: url("icons/Vector.png");
+    width: 20px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+#educaçao{
+    mask-image: url("icons/icone\ educaçao.png");   
+    background-color: var(--fundo);
+}
+#perfil{
+    mask-image: url("icons/icone\ perfil.png");
+    background-color: var(--fundo);
+}

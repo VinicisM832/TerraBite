@@ -14,12 +14,10 @@ body {
     overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-}
+
 
 main {
-    width: 100%;
+    width: 80%;
     max-width: 1250px;
     margin: 0 auto;
     padding: 40px 24px 60px;
@@ -68,7 +66,7 @@ main {
 
 /* Ícones */
 
-.icone {
+.icon {
     width: 52px;
     height: 52px;
     flex-shrink: 0;
@@ -83,17 +81,17 @@ main {
     margin-bottom: 12px;
 }
 
-.card-vermelho .icone {
+.card-vermelho .icon {
     background-color: color-mix(in srgb, var(--vermelho) 20%, transparent);
     color: var(--vermelho);
 }
 
-.card-cinza .icone {
+.card-cinza .icon {
     background-color: color-mix(in srgb, var(--verde) 20%, transparent);
     color: var(--preto);
 }
 
-.card-verde .icone {
+.card-verde .icon {
     background-color: color-mix(in srgb, var(--verde) 20%, transparent);
     color: var(--verde);
 }
@@ -255,7 +253,7 @@ main {
         border-radius: 12px;
     }
 
-    .icone {
+    .icon {
         width: 34px;
         height: 34px;
         font-size: 19px;
@@ -356,7 +354,7 @@ main {
         font-size: 9px;
     }
 
-    .icone {
+    .icon {
         width: 29px;
         height: 29px;
         font-size: 17px;

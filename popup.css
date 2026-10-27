@@ -54,20 +54,7 @@
     align-items: center;
 }
 
-.icone {
-    width: 24px;
-    height: 24px;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border: none;
-    background-color: var(--preto);
-    cursor: pointer;
-    mask-size: contain;
-    mask-repeat: no-repeat;
-}
 
 .icone img {
     width: 100%;
