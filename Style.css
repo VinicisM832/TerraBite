@@ -233,3 +233,8 @@ nav img{
     mask-image: url("icons/icone\ perfil.png");
     background-color: var(--fundo);
 }
+
+#abrirpopup{
+    mask-image: url(pictures/Vector.png);
+    background-color: var(--cor-principal);
+}
