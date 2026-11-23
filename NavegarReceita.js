@@ -4,7 +4,7 @@ const receitas = [
     site:"",
     nome:"Suco Verde com Folhas de Cenoura",
     descrição:"Bebida leve aproveitando os talos nutritivos da cenoura.",
-    ingredientes:"Folhas de cenoura",
+    ingredientes:("Folhas de cenoura","folha de couve"),
     tempo:20,
     nota:3.0},
 

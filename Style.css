@@ -11,6 +11,10 @@ body{
     font-family: 'Poppins', sans-serif;
     background: var(--fundo);
 }
+main{
+    width: 80%;
+    margin: auto;
+}
 
 /*header*/
 .navbar{

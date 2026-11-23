@@ -61,6 +61,7 @@
 
 .btn-cinza{
     background: var(--cinza-claro);
+    color: var(--preto);
 }
 .btn-cinza:hover{
     border-color: var(--cor-principal);
